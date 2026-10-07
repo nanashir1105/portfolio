@@ -146,7 +146,8 @@
   .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; }
   .panel .art svg { display: block; width: 100%; height: auto; }
   .art.erd { background: var(--cobalt-tint); }
-  .art.belt-art { background-color: #14246B; background-image: var(--circuit); background-size: 240px 240px; }
+  .art.people { background: #D4F5EE; }
+  .art.belt-art, .art.dark { background-color: #14246B; background-image: var(--circuit); background-size: 240px 240px; }
   .panel .body { padding: 1.4rem 1.5rem 1.7rem; }
   .panel h3 { font-family: var(--display); font-weight: 800; font-size: 1.5rem; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 .3rem; }
   .panel .meta { margin: 0 0 .9rem; color: var(--ink-soft); font-size: 1rem; }
@@ -156,6 +157,9 @@
   .s-ink { fill: var(--ink); } .s-cobalt { fill: var(--cobalt); } .s-yellow { fill: var(--yellow); }
   .s-mint { fill: var(--mint); } .s-white { fill: #fff; } .s-beam { fill: var(--beam); }
   .s-deep { fill: var(--deep); } .s-tool { fill: var(--tool); } .s-steel { fill: #AEB8E0; }
+  .s-ring { fill: none; stroke: #fff; stroke-width: 3; }
+  .s-floor { fill: none; stroke: var(--tool); stroke-width: 1.5; opacity: .7; }
+  .s-dash { stroke-dasharray: 4 4; }
   .s-card { fill: #fff; stroke: var(--ink); stroke-width: 2; }
   .s-line { fill: none; stroke: var(--ink); stroke-width: 2; }
   .t-head { fill: #fff; font: 600 11px var(--mono); }
@@ -397,10 +401,42 @@
           </div>
           <div class="body">
             <h3>Inventory Management System</h3>
-            <p class="meta">Final year project, Universiti Malaysia Sabah. Mar 2024 to Mar 2025.</p>
+            <p class="meta">Interactive Application Development, final year project. Universiti Malaysia Sabah, Labuan International Campus. Mar 2024 to Mar 2025.</p>
             <p>A web application for managing inventory, built with Laravel, PHP and MySQL. It put database design and web application development into practice, from the first schema to the finished interface.</p>
             <ul class="tags" aria-label="Technologies used">
               <li>Laravel</li><li>PHP</li><li>MySQL</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="art people">
+            <svg viewBox="0 0 400 160" role="img" aria-label="Illustration of two people working through a checklist together">
+              <rect class="s-ink" x="20" y="140" width="360" height="4" rx="2"/>
+              <circle class="s-cobalt" cx="90" cy="66" r="16"/>
+              <path class="s-cobalt" d="M62 140v-22a28 28 0 0 1 56 0v22z"/>
+              <circle class="s-ink" cx="310" cy="66" r="16"/>
+              <path class="s-ink" d="M282 140v-22a28 28 0 0 1 56 0v22z"/>
+              <path class="s-line s-dash" d="M118 100h34M248 100h34"/>
+              <rect class="s-card" x="152" y="22" width="96" height="112" rx="8"/>
+              <path class="s-yellow" d="M153 30a7 7 0 0 1 7-7h80a7 7 0 0 1 7 7v12H153z"/>
+              <circle class="s-mint" cx="172" cy="62" r="7"/>
+              <circle class="s-mint" cx="172" cy="86" r="7"/>
+              <circle class="s-mint" cx="172" cy="110" r="7"/>
+              <path class="s-line" d="M168.5 62l3 3 5-6M168.5 86l3 3 5-6M168.5 110l3 3 5-6"/>
+              <rect class="s-ink" x="188" y="59" width="46" height="6" rx="3" opacity=".8"/>
+              <rect class="s-ink" x="188" y="83" width="38" height="6" rx="3" opacity=".8"/>
+              <rect class="s-ink" x="188" y="107" width="44" height="6" rx="3" opacity=".8"/>
+              <circle class="s-mint" cx="118" cy="100" r="3.5"/>
+              <circle class="s-mint" cx="282" cy="100" r="3.5"/>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>SULAM Project</h3>
+            <p class="meta">Ethics in IT coursework. Universiti Malaysia Sabah, Labuan International Campus. Oct 2024 to Mar 2025.</p>
+            <p>Fieldwork for the Ethics in IT coursework, carried out in collaboration with Institut Latihan Perindustrian (ILP) Labuan.</p>
+            <ul class="tags" aria-label="Focus areas">
+              <li>Ethics in IT</li><li>Fieldwork</li><li>ILP Labuan</li>
             </ul>
           </div>
         </article>
@@ -422,10 +458,39 @@
           </div>
           <div class="body">
             <h3>IoT-Based Conveyor Belt Color Sensor</h3>
-            <p class="meta">Universiti Malaysia Sabah. Mar 2024 to Jul 2024.</p>
+            <p class="meta">Internet of Things, innovation project. Universiti Malaysia Sabah, Labuan International Campus. Mar 2024 to Jul 2024.</p>
             <p>A conveyor belt that reads the colour of passing items and acts on it, using a colour sensor and automation logic written for Arduino. It is the project behind the belt at the top of this page.</p>
             <ul class="tags" aria-label="Technologies used">
               <li>Arduino IDE</li><li>C++</li><li>Colour sensor</li><li>Automation logic</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="art dark">
+            <svg viewBox="0 0 400 160" role="img" aria-label="Illustration of a VR headset with a floating 3D cube">
+              <path class="s-floor" d="M0 134h400M0 148h400M100 134L60 160M200 134v26M300 134l40 26"/>
+              <polygon class="s-mint" points="46,34 74,46 46,58 18,46"/>
+              <polygon class="s-white" points="18,46 46,58 46,92 18,80"/>
+              <polygon class="s-yellow" points="46,58 74,46 74,80 46,92"/>
+              <rect class="s-steel" x="94" y="68" width="26" height="30" rx="6"/>
+              <rect class="s-steel" x="280" y="68" width="26" height="30" rx="6"/>
+              <rect class="s-steel" x="116" y="38" width="168" height="82" rx="28"/>
+              <rect class="s-deep" x="128" y="50" width="144" height="58" rx="20"/>
+              <circle class="s-tool" cx="170" cy="79" r="17"/>
+              <circle class="s-tool" cx="230" cy="79" r="17"/>
+              <circle class="s-mint" cx="170" cy="79" r="8"/>
+              <circle class="s-mint" cx="230" cy="79" r="8"/>
+              <circle class="s-ring" cx="350" cy="64" r="22"/>
+              <circle class="s-yellow" cx="350" cy="64" r="6"/>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>Augmented and Virtual Reality</h3>
+            <p class="meta">AR and VR coursework. Universiti Malaysia Sabah, Labuan International Campus. Oct 2023 to Feb 2024.</p>
+            <p>Coursework in AR and VR, building interactive and immersive digital experiences through hands-on projects.</p>
+            <ul class="tags" aria-label="Focus areas">
+              <li>Augmented reality</li><li>Virtual reality</li><li>Interactive media</li>
             </ul>
           </div>
         </article>
