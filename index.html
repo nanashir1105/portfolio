@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#2B4EFF">
+<meta name="theme-color" content="#0B1230">
 <title>Nurul Jannah Bashir Mohd | Software Developer</title>
 <meta name="description" content="Portfolio of Nurul Jannah Bashir Mohd, a software developer in Petaling Jaya, Malaysia, building Laravel and PHP web systems.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232B4EFF'/%3E%3Ctext x='50' y='68' font-size='56' font-family='Arial' font-weight='700' text-anchor='middle' fill='%23fff'%3ENJ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #F2F4F7;
@@ -17,17 +17,28 @@
     --ink: #101B3A;
     --ink-soft: #4A5472;
     --rule: #D3D9E4;
+    --night: #0B1230;
+    --deep: #070D26;
     --cobalt: #2B4EFF;
     --cobalt-tint: #DCE3FF;
+    --tool: #5772FF;
     --yellow: #FFC93C;
     --mint: #4FD8C0;
     --beam: #FF4D6D;
     --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
     --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    /* circuit-board tile used as a background image */
+    --circuit: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240' fill='none' stroke='%237F96FF' stroke-opacity='.25' stroke-width='2'%3E%3Cpath d='M0 40h60l20 20h50M130 60v50l20 20h90M0 130h30M40 0v20M40 240v-70l20-20h40M180 0v40l20 20h40M0 60h20M180 240v-20M210 40h30M100 150h60v60'/%3E%3Cg fill='%234FD8C0' fill-opacity='.6' stroke='none'%3E%3Ccircle cx='130' cy='60' r='4'/%3E%3Ccircle cx='240' cy='130' r='4'/%3E%3Ccircle cx='100' cy='150' r='4'/%3E%3Ccircle cx='160' cy='210' r='4'/%3E%3C/g%3E%3Cg stroke-opacity='.45'%3E%3Ccircle cx='130' cy='60' r='7'/%3E%3Ccircle cx='100' cy='150' r='7'/%3E%3C/g%3E%3C/svg%3E");
   }
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.125rem; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  body {
+    margin: 0; color: var(--ink); font-family: var(--body); font-size: 1.125rem; line-height: 1.65; -webkit-font-smoothing: antialiased;
+    background-color: var(--paper);
+    background-image: radial-gradient(rgba(16,27,58,.1) 1.2px, transparent 1.4px);
+    background-size: 26px 26px;
+  }
   a { color: var(--cobalt); text-underline-offset: 3px; }
   a:hover { color: var(--ink); }
   :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 4px; }
@@ -35,65 +46,96 @@
   .skip:focus { left: 8px; }
   .wrap { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
 
+  /* Code-window component, reused across the page */
+  .win { background: #0E1633; border: 1px solid rgba(255,255,255,.14); border-radius: 14px; box-shadow: 0 24px 48px -16px rgba(5,10,35,.55); overflow: hidden; color: #E4E9FF; font-family: var(--mono); }
+  .win-bar { display: flex; align-items: center; gap: 6px; padding: .6rem .85rem; background: #17214A; font-size: .78rem; color: #9FAAD6; }
+  .win-bar i { width: 10px; height: 10px; border-radius: 50%; display: block; }
+  .win-bar i:nth-child(1) { background: #FF5F57; }
+  .win-bar i:nth-child(2) { background: #FEBC2E; }
+  .win-bar i:nth-child(3) { background: #28C840; }
+  .win-bar span { margin-left: .6rem; }
+  .win pre { margin: 0; padding: 1rem 1.1rem; font-size: .86rem; line-height: 1.65; overflow-x: auto; }
+  .win code { font-family: inherit; }
+  .k { color: #FF7A9C; } .s { color: #FFD76E; } .v { color: #7FE7D4; } .f { color: #8FA8FF; } .c { color: #7584B5; }
+
   /* ---------- Hero ---------- */
-  .hero { background: var(--cobalt); color: #fff; }
-  .hero :focus-visible { outline-color: var(--yellow); }
+  .hero { color: #fff; overflow: hidden; background-color: var(--night); background-image: var(--circuit), linear-gradient(135deg, #0B1230 0%, #14246B 58%, #2B4EFF 135%); background-size: 240px 240px, cover; }
+  .hero :focus-visible, .readout-strip :focus-visible, .contact :focus-visible, .band :focus-visible { outline-color: var(--yellow); }
   .topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 2rem; padding: 1.4rem 0; font-family: var(--display); font-weight: 500; font-size: 1rem; }
   .topbar .mark { font-weight: 800; color: #fff; text-decoration: none; letter-spacing: -.01em; }
   .topbar nav { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; }
-  .topbar nav a { color: #E4E9FF; text-decoration: none; }
+  .topbar nav a { color: #C9D0EA; text-decoration: none; }
   .topbar nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 6px; }
-  .hero-copy { padding: 3.5rem 0 3.5rem; }
-  h1 { font-family: var(--display); font-weight: 800; font-size: clamp(3rem, 10.5vw, 7.6rem); line-height: .92; letter-spacing: -.04em; margin: 0 0 1.6rem; color: #fff; }
-  .role { font-family: var(--display); font-weight: 500; font-size: clamp(1.25rem, 2.8vw, 1.75rem); line-height: 1.3; margin: 0 0 .6rem; max-width: 32ch; }
-  .where { margin: 0 0 2.2rem; color: #E4E9FF; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3rem; align-items: center; padding: 2.5rem 0 4.5rem; }
+  h1 { font-family: var(--display); font-weight: 800; font-size: clamp(2.8rem, 7.4vw, 5.8rem); line-height: .94; letter-spacing: -.04em; margin: 0 0 1.5rem; color: #fff; }
+  .role { font-family: var(--display); font-weight: 500; font-size: clamp(1.2rem, 2.6vw, 1.6rem); line-height: 1.3; margin: 0 0 .6rem; max-width: 30ch; }
+  .where { margin: 0 0 2rem; color: #C9D0EA; }
   .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
   .btn { display: inline-block; font-family: var(--display); font-weight: 700; font-size: 1rem; padding: .85rem 1.4rem; border-radius: 10px; text-decoration: none; border: 2px solid #fff; }
   .btn.primary { background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
   .btn.primary:hover { background: #fff; border-color: #fff; color: var(--ink); }
   .btn.ghost { background: transparent; color: #fff; }
-  .btn.ghost:hover { background: #fff; color: var(--cobalt); }
+  .btn.ghost:hover { background: #fff; color: var(--night); }
 
-  /* Conveyor belt: the one memorable element */
+  /* Portrait */
+  .hero-art { position: relative; justify-self: center; width: min(360px, 100%); margin-bottom: 2.5rem; }
+  .portrait { position: relative; }
+  .frame-back { position: absolute; inset: 0; transform: translate(14px, 14px); border: 3px solid var(--yellow); border-radius: 28px 28px 28px 110px; }
+  .frame { position: relative; aspect-ratio: 4 / 5; border-radius: 28px 28px 28px 110px; overflow: hidden; background: linear-gradient(160deg, #2B4EFF 0%, #4FD8C0 170%); display: grid; place-items: center; }
+  .frame .initials { font-family: var(--display); font-weight: 800; font-size: 6.5rem; letter-spacing: -.05em; color: rgba(255,255,255,.92); }
+  .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .float { position: absolute; font-family: var(--display); font-weight: 700; font-size: .92rem; padding: .35rem .85rem; border-radius: 999px; box-shadow: 0 10px 22px rgba(5,10,35,.35); color: var(--ink); }
+  .float.f1 { top: 30px; left: -34px; background: var(--yellow); }
+  .float.f2 { top: 48%; right: -26px; background: #fff; }
+  .float.f3 { top: -12px; right: 24px; background: var(--mint); }
+  .win.mini { position: absolute; left: -64px; bottom: -42px; width: 270px; }
+  .win.mini pre { font-size: .76rem; padding: .75rem .9rem; line-height: 1.55; }
+
+  /* Conveyor belt */
   .belt-viewport { position: relative; height: 124px; overflow: hidden; }
   .belt-track { position: absolute; left: 0; top: 30px; display: flex; gap: 16px; will-change: transform; }
   .chip { flex: 0 0 132px; height: 76px; border-radius: 14px; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 1.15rem; transition: transform .2s ease; }
   .chip.lang { background: #fff; color: var(--ink); }
   .chip.frame { background: var(--yellow); color: var(--ink); }
   .chip.data { background: var(--mint); color: var(--ink); }
-  .chip.tool { background: var(--ink); color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.28); }
+  .chip.tool { background: var(--tool); color: #fff; }
   .chip.active { transform: translateY(-10px); }
   .gantry { position: absolute; left: 50%; top: 0; width: 210px; margin-left: -105px; height: 124px; pointer-events: none; }
-  .gantry .post { position: absolute; top: 14px; width: 8px; height: 110px; background: var(--ink); }
+  .gantry .post { position: absolute; top: 14px; width: 8px; height: 110px; background: #AEB8E0; }
   .gantry .post.l { left: 0; }
   .gantry .post.r { right: 0; }
-  .gantry .bar { position: absolute; left: -10px; right: -10px; top: 0; height: 22px; background: var(--ink); border-radius: 11px; }
+  .gantry .bar { position: absolute; left: -10px; right: -10px; top: 0; height: 22px; background: #AEB8E0; border-radius: 11px; }
   .gantry .bar::after { content: ""; position: absolute; left: 50%; top: 5px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--beam); }
   .gantry .beam { position: absolute; left: 50%; top: 22px; width: 3px; height: 102px; margin-left: -1.5px; background: var(--beam); box-shadow: 0 0 12px 3px rgba(255,77,109,.6); }
-  .belt-band { height: 30px; background: repeating-linear-gradient(90deg, #16258A 0 20px, #101B6B 20px 40px); border-top: 4px solid #0A1248; }
-  .readout-strip { background: var(--ink); color: #fff; }
+  .belt-band { height: 30px; background: repeating-linear-gradient(90deg, #0F1A4A 0 20px, #0A1236 20px 40px); border-top: 4px solid var(--tool); }
+  .readout-strip { background: var(--deep); color: #fff; }
   .readout { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 1.5rem; padding: .9rem 0; font-family: var(--display); }
   .reading { display: flex; align-items: center; gap: .7rem; font-size: 1.05rem; color: #C9D0EA; }
   .reading strong { color: #fff; font-size: 1.4rem; font-weight: 700; letter-spacing: -.01em; }
   .swatch { width: 16px; height: 16px; border-radius: 5px; background: #fff; flex: none; }
   .belt-ctl { font: inherit; font-weight: 700; font-size: .95rem; color: #fff; background: transparent; border: 2px solid #fff; border-radius: 8px; padding: .3rem .9rem; cursor: pointer; }
   .belt-ctl:hover { background: #fff; color: var(--ink); }
-  .readout-strip :focus-visible { outline-color: var(--yellow); }
 
   /* ---------- Sections ---------- */
   .block { display: grid; grid-template-columns: 210px 1fr; gap: 1.25rem 3rem; padding: 5rem 0; border-top: 1px solid var(--rule); }
-  .block:first-of-type { border-top: 0; }
+  .wrap > .block:first-child { border-top: 0; }
   .block > h2 { font-family: var(--display); font-weight: 800; font-size: 2rem; letter-spacing: -.025em; line-height: 1.05; margin: 0; }
   .prose { max-width: 62ch; }
   .prose p { margin: 0 0 1.1em; }
   .prose p:last-child { margin-bottom: 0; }
-  .lead { font-size: 1.4rem; line-height: 1.5; }
+  .lead { font-size: 1.35rem; line-height: 1.5; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
 
-  /* Experience */
-  .job { display: grid; grid-template-columns: 10rem 1fr; gap: .4rem 2rem; padding: 2rem 0; border-top: 1px solid var(--rule); }
-  .job:first-child { border-top: 0; padding-top: 0; }
-  .job-date { font-family: var(--display); font-weight: 700; color: var(--cobalt); line-height: 1.4; padding-top: .3rem; }
-  .job h3 { font-family: var(--display); font-weight: 800; font-size: 1.55rem; line-height: 1.15; letter-spacing: -.02em; margin: 0; }
+  /* Experience as a git history */
+  .commit { display: grid; grid-template-columns: 44px 1fr; column-gap: 1rem; position: relative; padding-bottom: 2.6rem; }
+  .commit::before { content: ""; position: absolute; left: 20px; top: 24px; bottom: -6px; width: 3px; background: var(--cobalt); }
+  .commit:last-child { padding-bottom: 0; }
+  .commit:last-child::before { bottom: auto; height: 90px; background: linear-gradient(var(--cobalt), transparent); }
+  .node { position: relative; z-index: 1; width: 19px; height: 19px; margin: 6px 0 0 11px; border-radius: 50%; background: var(--paper); border: 4px solid var(--cobalt); }
+  .commit.head .node { background: var(--mint); }
+  .commit-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .8rem; font-family: var(--mono); font-size: .85rem; color: var(--cobalt); font-weight: 600; margin-bottom: .3rem; }
+  .ref { background: var(--ink); color: var(--mint); border-radius: 6px; padding: .05rem .55rem; font-size: .78rem; }
+  .commit h3 { font-family: var(--display); font-weight: 800; font-size: 1.55rem; line-height: 1.15; letter-spacing: -.02em; margin: 0; }
   .company { margin: .15rem 0 1rem; font-weight: 600; color: var(--ink-soft); }
   ul.plain { margin: 0; padding-left: 1.2rem; max-width: 62ch; }
   ul.plain li { margin-bottom: .5rem; padding-left: .2rem; }
@@ -102,10 +144,9 @@
   /* Projects */
   .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; }
-  .panel .art { display: block; }
   .panel .art svg { display: block; width: 100%; height: auto; }
-  .art.shelf { background: var(--cobalt-tint); }
-  .art.belt-art { background: var(--cobalt); }
+  .art.erd { background: var(--cobalt-tint); }
+  .art.belt-art { background-color: #14246B; background-image: var(--circuit); background-size: 240px 240px; }
   .panel .body { padding: 1.4rem 1.5rem 1.7rem; }
   .panel h3 { font-family: var(--display); font-weight: 800; font-size: 1.5rem; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 .3rem; }
   .panel .meta { margin: 0 0 .9rem; color: var(--ink-soft); font-size: 1rem; }
@@ -113,19 +154,27 @@
   .tags { display: flex; flex-wrap: wrap; gap: .45rem; list-style: none; padding: 0; margin: 0; }
   .tags li { font-family: var(--display); font-weight: 600; font-size: .9rem; padding: .15rem .7rem; border-radius: 999px; border: 2px solid var(--ink); }
   .s-ink { fill: var(--ink); } .s-cobalt { fill: var(--cobalt); } .s-yellow { fill: var(--yellow); }
-  .s-mint { fill: var(--mint); } .s-white { fill: #fff; } .s-beam { fill: var(--beam); } .s-band { fill: #0A1248; }
+  .s-mint { fill: var(--mint); } .s-white { fill: #fff; } .s-beam { fill: var(--beam); }
+  .s-deep { fill: var(--deep); } .s-tool { fill: var(--tool); } .s-steel { fill: #AEB8E0; }
+  .s-card { fill: #fff; stroke: var(--ink); stroke-width: 2; }
+  .s-line { fill: none; stroke: var(--ink); stroke-width: 2; }
+  .t-head { fill: #fff; font: 600 11px var(--mono); }
+  .t-row { fill: var(--ink); font: 400 10.5px var(--mono); }
 
-  /* Skills */
-  .skills-note { margin: 0 0 1.5rem; color: var(--ink-soft); max-width: 62ch; font-size: 1.05rem; }
-  .skill-row { display: grid; grid-template-columns: 11rem 1fr; gap: .6rem 2rem; padding: 1.1rem 0; border-top: 1px solid var(--rule); }
+  /* Skills band */
+  .band { background-color: var(--night); background-image: radial-gradient(rgba(255,255,255,.13) 1.2px, transparent 1.4px), linear-gradient(135deg, #0B1230, #14246B); background-size: 26px 26px, cover; color: #fff; }
+  .band .block { border-top: 0; }
+  .band .block > h2 { color: #fff; }
+  .skills-note { margin: 0 0 1.5rem; color: #C9D0EA; max-width: 62ch; font-size: 1.05rem; }
+  .skill-row { display: grid; grid-template-columns: 11rem 1fr; gap: .6rem 2rem; padding: 1.1rem 0; border-top: 1px solid rgba(255,255,255,.16); }
   .skill-row h3 { font-family: var(--display); font-weight: 700; font-size: 1.05rem; line-height: 1.7; margin: 0; }
   .pills { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; margin: 0; padding: 0; }
-  .pill { font-family: var(--display); font-weight: 600; font-size: .98rem; padding: .3rem .9rem; border-radius: 999px; border: 2px solid var(--ink); color: var(--ink); background: transparent; }
-  .pill.lang { background: #fff; }
-  .pill.frame { background: var(--yellow); }
-  .pill.data { background: var(--mint); }
-  .pill.tool { background: var(--ink); color: #fff; }
-  .pill.plain { border-color: var(--rule); background: var(--surface); }
+  .pill { font-family: var(--display); font-weight: 600; font-size: .98rem; padding: .3rem .9rem; border-radius: 999px; border: 2px solid transparent; }
+  .pill.lang { background: #fff; border-color: #fff; color: var(--ink); }
+  .pill.frame { background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
+  .pill.data { background: var(--mint); border-color: var(--mint); color: var(--ink); }
+  .pill.tool { background: var(--tool); border-color: var(--tool); color: #fff; }
+  .pill.plain { border-color: rgba(255,255,255,.35); color: #fff; }
 
   /* Education */
   .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
@@ -138,31 +187,37 @@
   .sub { font-family: var(--display); font-weight: 800; font-size: 1.3rem; letter-spacing: -.01em; margin: 3rem 0 .9rem; }
 
   /* Contact */
-  .contact { background: var(--yellow); color: var(--ink); padding: 5rem 0; }
+  .contact { color: #fff; padding: 5.5rem 0; overflow: hidden; background-color: var(--cobalt); background-image: var(--circuit), linear-gradient(135deg, #14246B 0%, #2B4EFF 100%); background-size: 240px 240px, cover; }
   .contact h2 { font-family: var(--display); font-weight: 800; font-size: 2rem; letter-spacing: -.025em; line-height: 1.05; margin: 0 0 1rem; }
-  .contact p { margin: 0 0 1.2rem; max-width: 52ch; }
-  .contact a { color: var(--ink); }
-  .contact a:hover { color: var(--cobalt); }
-  .contact :focus-visible { outline-color: var(--ink); }
-  .big-mail { display: inline-block; font-family: var(--display); font-weight: 800; font-size: clamp(1.5rem, 5.6vw, 3.6rem); letter-spacing: -.035em; line-height: 1.1; word-break: break-word; }
+  .contact p { margin: 0 0 1.4rem; max-width: 52ch; color: #E4E9FF; }
+  .contact a { color: #fff; }
+  .contact a:hover { color: var(--yellow); }
+  .big-mail { display: inline-block; font-family: var(--display); font-weight: 800; font-size: clamp(1.5rem, 5.4vw, 3.5rem); letter-spacing: -.035em; line-height: 1.1; word-break: break-word; }
+  .prompt { font-family: var(--mono); font-weight: 600; color: var(--mint); font-size: .5em; margin-right: .5em; letter-spacing: 0; vertical-align: .15em; }
   .contact-list { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: .5rem; font-family: var(--display); font-weight: 500; }
-  .contact-list span { display: inline-block; min-width: 6.5rem; font-weight: 700; }
+  .contact-list span { display: inline-block; min-width: 6.5rem; font-weight: 700; color: var(--mint); }
 
-  footer { background: var(--ink); color: #B9C1DE; padding: 1.6rem 0; font-size: .95rem; }
+  footer { background: var(--deep); color: #AEB8E0; padding: 1.6rem 0; font-size: .95rem; }
 
+  @media (max-width: 1000px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
   @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; padding-bottom: 3.5rem; }
     .project-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 760px) {
     .block { grid-template-columns: 1fr; padding: 3.4rem 0; }
-    .job { grid-template-columns: 1fr; }
     .skill-row { grid-template-columns: 1fr; gap: .3rem; }
     .edu-grid { grid-template-columns: 1fr; }
-    .hero-copy { padding: 2rem 0 2.5rem; }
+    .hero-art { width: min(300px, 100% - 20px); }
+    .float.f1 { left: -10px; }
+    .float.f2 { right: -10px; }
+    .win.mini { left: -10px; width: 240px; }
     .belt-viewport { height: 112px; }
     .chip { flex-basis: 112px; height: 68px; font-size: 1.05rem; }
     .gantry { width: 170px; margin-left: -85px; }
-    .contact { padding: 3.4rem 0; }
+    .contact { padding: 3.6rem 0; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -187,13 +242,35 @@
       </nav>
     </div>
 
-    <div class="hero-copy">
-      <h1>Nurul Jannah<br>Bashir Mohd</h1>
-      <p class="role">Software developer building Laravel systems for production and sales teams.</p>
-      <p class="where">Petaling Jaya, Selangor, Malaysia. Open to software developer roles.</p>
-      <div class="actions">
-        <a class="btn primary" href="mailto:nuruljannah3019@gmail.com">Email me</a>
-        <a class="btn ghost" href="#projects">See my projects</a>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1>Nurul Jannah<br>Bashir Mohd</h1>
+        <p class="role">Software developer building Laravel systems for production and sales teams.</p>
+        <p class="where">Petaling Jaya, Selangor, Malaysia. Open to software developer roles.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:nuruljannah3019@gmail.com">Email me</a>
+          <a class="btn ghost" href="#projects">See my projects</a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="portrait">
+          <div class="frame-back" aria-hidden="true"></div>
+          <div class="frame">
+            <span class="initials" aria-hidden="true">NJ</span>
+            <!-- Put your photo in the same folder and name it photo.jpg -->
+            <img src="photo.jpg" alt="Portrait of Nurul Jannah Bashir Mohd" onerror="this.remove()">
+          </div>
+          <span class="float f1" aria-hidden="true">Laravel</span>
+          <span class="float f2" aria-hidden="true">PHP</span>
+          <span class="float f3" aria-hidden="true">PostgreSQL</span>
+        </div>
+        <div class="win mini" aria-hidden="true">
+          <div class="win-bar"><i></i><i></i><i></i><span>terminal</span></div>
+<pre><code><span class="c">$</span> <span class="f">php</span> artisan serve
+<span class="v">INFO</span>  Server running on
+<span class="s">[http://127.0.0.1:8000]</span></code></pre>
+        </div>
       </div>
     </div>
   </div>
@@ -221,19 +298,39 @@
   <div class="wrap">
     <section class="block" id="about">
       <h2>About</h2>
-      <div class="prose">
-        <p class="lead">I build and maintain Laravel systems that production and sales teams use every day.</p>
-        <p>At IA SoftTech I worked in PHP and PostgreSQL on new features and bug fixes, then carried the work through testing, deployment and maintenance. I also supported users directly through the helpdesk, so I know what a problem looks like from the other side of the screen.</p>
-        <p>I am looking for a software development role where I can help ship reliable web applications and keep growing as an engineer.</p>
+      <div class="about-grid">
+        <div class="prose">
+          <p class="lead">I build and maintain Laravel systems that production and sales teams use every day.</p>
+          <p>At IA SoftTech I worked in PHP and PostgreSQL on new features and bug fixes, then carried the work through testing, deployment and maintenance. I also supported users directly through the helpdesk, so I know what a problem looks like from the other side of the screen.</p>
+          <p>I am looking for a software development role where I can help ship reliable web applications and keep growing as an engineer.</p>
+        </div>
+        <div class="win" aria-hidden="true">
+          <div class="win-bar"><i></i><i></i><i></i><span>NurulJannah.php</span></div>
+<pre><code><span class="k">class</span> <span class="f">NurulJannah</span> <span class="k">extends</span> <span class="f">Developer</span>
+{
+    <span class="k">public</span> <span class="v">$role</span> = <span class="s">'Software Developer'</span>;
+    <span class="k">public</span> <span class="v">$stack</span> = [
+        <span class="s">'PHP'</span>, <span class="s">'Laravel'</span>,
+        <span class="s">'PostgreSQL'</span>, <span class="s">'React.js'</span>,
+    ];
+    <span class="k">public</span> <span class="v">$base</span> = <span class="s">'Petaling Jaya, MY'</span>;
+
+    <span class="k">public function</span> <span class="f">build</span>()
+    {
+        <span class="k">return</span> <span class="s">'reliable web applications'</span>;
+    }
+}</code></pre>
+        </div>
       </div>
     </section>
 
     <section class="block" id="experience">
       <h2>Experience</h2>
       <div>
-        <article class="job">
-          <div class="job-date">Sept 2025 to Oct 2026</div>
+        <article class="commit head">
+          <div class="node" aria-hidden="true"></div>
           <div>
+            <div class="commit-meta"><span>Sept 2025 to Oct 2026</span><span class="ref" aria-hidden="true">HEAD &rarr; main</span></div>
             <h3>Software Developer</h3>
             <p class="company">IA SoftTech Sdn. Bhd.</p>
             <ul class="plain">
@@ -245,9 +342,10 @@
             </ul>
           </div>
         </article>
-        <article class="job">
-          <div class="job-date">Mar 2025 to Aug 2025</div>
+        <article class="commit">
+          <div class="node" aria-hidden="true"></div>
           <div>
+            <div class="commit-meta"><span>Mar 2025 to Aug 2025</span></div>
             <h3>Intern</h3>
             <p class="company">Department of Chemistry Malaysia</p>
             <ul class="plain">
@@ -264,27 +362,37 @@
       <h2>Projects</h2>
       <div class="project-grid">
         <article class="panel">
-          <div class="art shelf">
-            <svg viewBox="0 0 400 190" role="img" aria-label="Illustration of stocked inventory shelves">
-              <rect class="s-ink" x="20" y="22" width="6" height="156"/>
-              <rect class="s-ink" x="374" y="22" width="6" height="156"/>
-              <rect class="s-ink" x="14" y="100" width="372" height="6" rx="3"/>
-              <rect class="s-ink" x="14" y="172" width="372" height="6" rx="3"/>
-              <rect class="s-cobalt" x="40" y="50" width="62" height="50" rx="3"/>
-              <rect class="s-yellow" x="112" y="66" width="50" height="34" rx="3"/>
-              <rect class="s-mint" x="172" y="40" width="72" height="60" rx="3"/>
-              <rect class="s-ink" x="254" y="60" width="46" height="40" rx="3"/>
-              <rect class="s-cobalt" x="310" y="48" width="54" height="52" rx="3"/>
-              <rect class="s-mint" x="40" y="132" width="54" height="40" rx="3"/>
-              <rect class="s-yellow" x="104" y="114" width="70" height="58" rx="3"/>
-              <rect class="s-cobalt" x="184" y="134" width="50" height="38" rx="3"/>
-              <rect class="s-ink" x="244" y="112" width="72" height="60" rx="3"/>
-              <rect class="s-yellow" x="326" y="128" width="38" height="44" rx="3"/>
-              <rect class="s-white" x="48" y="58" width="22" height="6" rx="2" opacity=".85"/>
-              <rect class="s-white" x="180" y="48" width="26" height="6" rx="2" opacity=".85"/>
-              <rect class="s-white" x="318" y="56" width="20" height="6" rx="2" opacity=".85"/>
-              <rect class="s-white" x="112" y="122" width="26" height="6" rx="2" opacity=".85"/>
-              <rect class="s-white" x="252" y="120" width="26" height="6" rx="2" opacity=".85"/>
+          <div class="art erd">
+            <svg viewBox="0 0 400 160" role="img" aria-label="Entity relationship diagram with categories, products and stock tables">
+              <path class="s-line" d="M114 64h14v2h14"/>
+              <path class="s-line" d="M260 50h14v36h14"/>
+              <rect class="s-card" x="14" y="34" width="100" height="70" rx="6"/>
+              <path class="s-cobalt" d="M14 40a6 6 0 0 1 6-6h88a6 6 0 0 1 6 6v16H14z"/>
+              <text class="t-head" x="24" y="49">categories</text>
+              <circle class="s-yellow" cx="24" cy="64" r="3.5"/>
+              <text class="t-row" x="34" y="68">id</text>
+              <text class="t-row" x="34" y="84">name</text>
+              <rect class="s-card" x="142" y="20" width="118" height="102" rx="6"/>
+              <path class="s-cobalt" d="M142 26a6 6 0 0 1 6-6h106a6 6 0 0 1 6 6v16H142z"/>
+              <text class="t-head" x="152" y="35">products</text>
+              <circle class="s-yellow" cx="152" cy="50" r="3.5"/>
+              <text class="t-row" x="162" y="54">id</text>
+              <text class="t-row" x="162" y="70">category_id</text>
+              <text class="t-row" x="162" y="86">name</text>
+              <text class="t-row" x="162" y="102">sku</text>
+              <text class="t-row" x="162" y="118">price</text>
+              <rect class="s-card" x="288" y="40" width="104" height="86" rx="6"/>
+              <path class="s-cobalt" d="M288 46a6 6 0 0 1 6-6h92a6 6 0 0 1 6 6v16H288z"/>
+              <text class="t-head" x="298" y="55">stock_moves</text>
+              <circle class="s-yellow" cx="298" cy="70" r="3.5"/>
+              <text class="t-row" x="308" y="74">id</text>
+              <text class="t-row" x="308" y="90">product_id</text>
+              <text class="t-row" x="308" y="106">qty</text>
+              <text class="t-row" x="308" y="122">moved_at</text>
+              <circle class="s-mint" cx="114" cy="64" r="3.5"/>
+              <circle class="s-mint" cx="142" cy="66" r="3.5"/>
+              <circle class="s-mint" cx="260" cy="50" r="3.5"/>
+              <circle class="s-mint" cx="288" cy="86" r="3.5"/>
             </svg>
           </div>
           <div class="body">
@@ -299,17 +407,17 @@
 
         <article class="panel">
           <div class="art belt-art">
-            <svg viewBox="0 0 400 190" role="img" aria-label="Illustration of a colour sensor above a conveyor belt">
-              <rect class="s-ink" x="0" y="148" width="400" height="26"/>
-              <rect class="s-band" x="0" y="148" width="400" height="4"/>
-              <rect class="s-white" x="36" y="96" width="60" height="52" rx="6"/>
-              <rect class="s-yellow" x="170" y="96" width="60" height="52" rx="6"/>
-              <rect class="s-mint" x="304" y="96" width="60" height="52" rx="6"/>
-              <rect class="s-ink" x="120" y="26" width="8" height="122"/>
-              <rect class="s-ink" x="272" y="26" width="8" height="122"/>
-              <rect class="s-ink" x="112" y="14" width="176" height="18" rx="9"/>
-              <rect class="s-beam" x="198.5" y="29" width="3" height="67"/>
-              <circle class="s-beam" cx="200" cy="23" r="6"/>
+            <svg viewBox="0 0 400 160" role="img" aria-label="Illustration of a colour sensor above a conveyor belt">
+              <rect class="s-deep" x="0" y="118" width="400" height="26"/>
+              <rect class="s-tool" x="0" y="118" width="400" height="4"/>
+              <rect class="s-white" x="36" y="66" width="60" height="52" rx="6"/>
+              <rect class="s-yellow" x="170" y="66" width="60" height="52" rx="6"/>
+              <rect class="s-mint" x="304" y="66" width="60" height="52" rx="6"/>
+              <rect class="s-steel" x="120" y="14" width="8" height="104"/>
+              <rect class="s-steel" x="272" y="14" width="8" height="104"/>
+              <rect class="s-steel" x="112" y="4" width="176" height="18" rx="9"/>
+              <rect class="s-beam" x="198.5" y="19" width="3" height="47"/>
+              <circle class="s-beam" cx="200" cy="13" r="6"/>
             </svg>
           </div>
           <div class="body">
@@ -323,38 +431,44 @@
         </article>
       </div>
     </section>
+  </div>
 
-    <section class="block" id="skills">
-      <h2>Skills</h2>
-      <div>
-        <p class="skills-note">The colours match the belt at the top of the page: white for languages, yellow for frameworks and libraries, green for databases, dark blue for tools.</p>
-        <div class="skill-row">
-          <h3>Languages</h3>
-          <ul class="pills"><li class="pill lang">PHP</li><li class="pill lang">JavaScript</li><li class="pill lang">Java</li><li class="pill lang">HTML</li><li class="pill lang">CSS</li><li class="pill lang">C++</li></ul>
+  <div class="band">
+    <div class="wrap">
+      <section class="block" id="skills">
+        <h2>Skills</h2>
+        <div>
+          <p class="skills-note">The colours match the belt at the top of the page: white for languages, yellow for frameworks and libraries, green for databases, blue for tools.</p>
+          <div class="skill-row">
+            <h3>Languages</h3>
+            <ul class="pills"><li class="pill lang">PHP</li><li class="pill lang">JavaScript</li><li class="pill lang">Java</li><li class="pill lang">HTML</li><li class="pill lang">CSS</li><li class="pill lang">C++</li></ul>
+          </div>
+          <div class="skill-row">
+            <h3>Frameworks and libraries</h3>
+            <ul class="pills"><li class="pill frame">Laravel</li><li class="pill frame">React.js</li></ul>
+          </div>
+          <div class="skill-row">
+            <h3>Databases</h3>
+            <ul class="pills"><li class="pill data">PostgreSQL</li><li class="pill data">MySQL</li><li class="pill data">Supabase</li></ul>
+          </div>
+          <div class="skill-row">
+            <h3>Tools</h3>
+            <ul class="pills"><li class="pill tool">Git</li><li class="pill tool">GitHub</li><li class="pill tool">Visual Studio Code</li><li class="pill tool">XAMPP</li><li class="pill tool">Arduino IDE</li></ul>
+          </div>
+          <div class="skill-row">
+            <h3>Practice</h3>
+            <ul class="pills"><li class="pill plain">Full-stack development</li><li class="pill plain">REST APIs</li><li class="pill plain">ERD design</li><li class="pill plain">Software testing</li><li class="pill plain">Debugging</li><li class="pill plain">Deployment</li><li class="pill plain">Technical documentation</li></ul>
+          </div>
+          <div class="skill-row">
+            <h3>Also</h3>
+            <ul class="pills"><li class="pill plain">IoT sensor integration</li><li class="pill plain">AR/VR</li></ul>
+          </div>
         </div>
-        <div class="skill-row">
-          <h3>Frameworks and libraries</h3>
-          <ul class="pills"><li class="pill frame">Laravel</li><li class="pill frame">React.js</li></ul>
-        </div>
-        <div class="skill-row">
-          <h3>Databases</h3>
-          <ul class="pills"><li class="pill data">PostgreSQL</li><li class="pill data">MySQL</li><li class="pill data">Supabase</li></ul>
-        </div>
-        <div class="skill-row">
-          <h3>Tools</h3>
-          <ul class="pills"><li class="pill tool">Git</li><li class="pill tool">GitHub</li><li class="pill tool">Visual Studio Code</li><li class="pill tool">XAMPP</li><li class="pill tool">Arduino IDE</li></ul>
-        </div>
-        <div class="skill-row">
-          <h3>Practice</h3>
-          <ul class="pills"><li class="pill plain">Full-stack development</li><li class="pill plain">REST APIs</li><li class="pill plain">ERD design</li><li class="pill plain">Software testing</li><li class="pill plain">Debugging</li><li class="pill plain">Deployment</li><li class="pill plain">Technical documentation</li></ul>
-        </div>
-        <div class="skill-row">
-          <h3>Also</h3>
-          <ul class="pills"><li class="pill plain">IoT sensor integration</li><li class="pill plain">AR/VR</li></ul>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
+  </div>
 
+  <div class="wrap">
     <section class="block" id="education">
       <h2>Education and awards</h2>
       <div>
@@ -395,7 +509,7 @@
     <div class="wrap">
       <h2>Contact</h2>
       <p>I am open to software developer roles. Email is the fastest way to reach me.</p>
-      <a class="big-mail" href="mailto:nuruljannah3019@gmail.com">nuruljannah3019@gmail.com</a>
+      <a class="big-mail" href="mailto:nuruljannah3019@gmail.com"><span class="prompt" aria-hidden="true">$ mail</span>nuruljannah3019@gmail.com</a>
       <ul class="contact-list">
         <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/jannahbashir1905" rel="noopener">linkedin.com/in/jannahbashir1905</a></li>
         <li><span>GitHub</span><a href="https://github.com/nanashir1105" rel="noopener">github.com/nanashir1105</a></li>
@@ -425,7 +539,7 @@
     { n: "Java",       c: "lang",  d: "language" },
     { n: "C++",        c: "lang",  d: "language" }
   ];
-  var COLORS = { lang: "#FFFFFF", frame: "#FFC93C", data: "#4FD8C0", tool: "#8A96C6" };
+  var COLORS = { lang: "#FFFFFF", frame: "#FFC93C", data: "#4FD8C0", tool: "#5772FF" };
   var GAP = 16, SPEED = 60, COPIES = 3; // px per second
 
   var track = document.getElementById("track");
