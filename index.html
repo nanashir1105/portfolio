@@ -190,6 +190,26 @@
   .edu-card ul { margin: 0; padding-left: 1.2rem; }
   .sub { font-family: var(--display); font-weight: 800; font-size: 1.3rem; letter-spacing: -.01em; margin: 3rem 0 .9rem; }
 
+
+  /* Certificates */
+  .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1rem; }
+  .cert { background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
+  .cert-thumb { display: block; width: 100%; padding: 0; border: 0; background: var(--cobalt-tint); cursor: zoom-in; position: relative; line-height: 0; }
+  .cert-thumb img { width: 100%; height: auto; display: block; }
+  .cert-thumb::after { content: "View larger"; position: absolute; right: .7rem; bottom: .7rem; font-family: var(--display); font-weight: 700; font-size: .85rem; line-height: 1.2; background: var(--ink); color: #fff; padding: .3rem .7rem; border-radius: 999px; }
+  .cert-body { padding: 1.1rem 1.3rem 1.3rem; }
+  .cert-body h4 { font-family: var(--display); font-weight: 800; font-size: 1.15rem; line-height: 1.25; letter-spacing: -.01em; margin: 0 0 .25rem; }
+  .cert-body .meta { margin: 0 0 .8rem; color: var(--ink-soft); font-size: 1rem; line-height: 1.5; }
+  .cert-body a { font-family: var(--display); font-weight: 700; font-size: .98rem; }
+  dialog.lightbox { border: 0; padding: 0; background: transparent; max-width: min(1100px, 94vw); width: 100%; overflow: visible; }
+  dialog.lightbox::backdrop { background: rgba(7,13,38,.82); }
+  .lightbox-inner { position: relative; }
+  .lightbox img { display: block; width: 100%; height: auto; max-height: 82vh; object-fit: contain; border-radius: 12px; background: #fff; }
+  .lightbox-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .6rem 1rem; margin-top: .8rem; font-family: var(--display); color: #fff; }
+  .lightbox-bar a { color: var(--yellow); font-weight: 700; }
+  .lightbox-bar button { font: inherit; font-weight: 700; color: var(--ink); background: var(--yellow); border: 0; border-radius: 8px; padding: .4rem 1rem; cursor: pointer; }
+  .lightbox :focus-visible { outline-color: #fff; }
+
   /* Contact */
   .contact { color: #fff; padding: 5.5rem 0; overflow: hidden; background-color: var(--cobalt); background-image: var(--circuit), linear-gradient(135deg, #14246B 0%, #2B4EFF 100%); background-size: 240px 240px, cover; }
   .contact h2 { font-family: var(--display); font-weight: 800; font-size: 2rem; letter-spacing: -.025em; line-height: 1.05; margin: 0 0 1rem; }
@@ -214,6 +234,7 @@
     .block { grid-template-columns: 1fr; padding: 3.4rem 0; }
     .skill-row { grid-template-columns: 1fr; gap: .3rem; }
     .edu-grid { grid-template-columns: 1fr; }
+    .cert-grid { grid-template-columns: 1fr; }
     .hero-art { width: min(300px, 100% - 20px); }
     .float.f1 { left: -10px; }
     .float.f2 { right: -10px; }
@@ -558,14 +579,47 @@
           </article>
         </div>
 
-        <h3 class="sub">Achievements and certifications</h3>
+        <h3 class="sub">Achievements</h3>
         <ul class="plain">
           <li>Dean's Award, 2023/2024 academic year</li>
           <li>STPM Distinction Award</li>
-          <li>Introduction to Cybersecurity, Cisco Networking Academy</li>
           <li>Certificate of Appreciation, Faculty of Computer and Informatics Student Association</li>
           <li>Took part in technology and innovation exhibitions including DSA and MITEC</li>
         </ul>
+
+        <h3 class="sub">Certificates</h3>
+        <div class="cert-grid">
+          <article class="cert">
+            <button class="cert-thumb" type="button" data-full="certificates/cisco-introduction-to-cybersecurity.jpg" data-pdf="certificates/cisco-introduction-to-cybersecurity.pdf" data-title="Introduction to Cybersecurity, Cisco Networking Academy" aria-label="View Introduction to Cybersecurity certificate larger">
+              <img src="certificates/cisco-introduction-to-cybersecurity.jpg" alt="Certificate: Introduction to Cybersecurity, Cisco Networking Academy" loading="lazy">
+            </button>
+            <div class="cert-body">
+              <h4>Introduction to Cybersecurity</h4>
+              <p class="meta">Cisco Networking Academy. Completed 25 Sep 2026.</p>
+              <a href="certificates/cisco-introduction-to-cybersecurity.pdf" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+          </article>
+          <article class="cert">
+            <button class="cert-thumb" type="button" data-full="certificates/ict-academy-cms-website.jpg" data-pdf="certificates/ict-academy-cms-website.pdf" data-title="ICT Academy: How to Build Your Own Website Using Content Management System" aria-label="View ICT Academy certificate larger">
+              <img src="certificates/ict-academy-cms-website.jpg" alt="Certificate of Participation: ICT Academy, How to Build Your Own Website Using Content Management System" loading="lazy">
+            </button>
+            <div class="cert-body">
+              <h4>ICT Academy: Build Your Own Website Using a Content Management System</h4>
+              <p class="meta">Certificate of Participation, GREAT Tawau. 17 Oct 2021, online via Zoom.</p>
+              <a href="certificates/ict-academy-cms-website.pdf" target="_blank" rel="noopener">Open PDF</a>
+            </div>
+          </article>
+        </div>
+
+        <dialog class="lightbox" id="lightbox" aria-label="Certificate viewer">
+          <div class="lightbox-inner">
+            <img id="lbImg" src="" alt="">
+            <div class="lightbox-bar">
+              <span id="lbTitle"></span>
+              <span><a id="lbPdf" href="#" target="_blank" rel="noopener">Open PDF</a> &nbsp; <button type="button" id="lbClose">Close</button></span>
+            </div>
+          </div>
+        </dialog>
       </div>
     </section>
   </div>
@@ -574,7 +628,7 @@
     <div class="wrap">
       <h2>Contact</h2>
       <p>I am open to software developer roles. Email is the fastest way to reach me.</p>
-      <a class="big-mail" href="mailto:nuruljannah3019@gmail.com"><span class="prompt" aria-hidden="true">$ email</span>nuruljannah3019@gmail.com</a>
+      <a class="big-mail" href="mailto:nuruljannah3019@gmail.com"><span class="prompt" aria-hidden="true">$ mail</span>nuruljannah3019@gmail.com</a>
       <ul class="contact-list">
         <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/jannahbashir1905" rel="noopener">linkedin.com/in/jannahbashir1905</a></li>
         <li><span>GitHub</span><a href="https://github.com/nanashir1105" rel="noopener">github.com/nanashir1105</a></li>
@@ -685,6 +739,23 @@
     belt.addEventListener("mouseenter", function () { hovering = true; });
     belt.addEventListener("mouseleave", function () { hovering = false; last = null; });
   }
+})();
+
+(function () {
+  var dlg = document.getElementById("lightbox");
+  if (!dlg || typeof dlg.showModal !== "function") return;
+  var img = document.getElementById("lbImg"), title = document.getElementById("lbTitle"), pdf = document.getElementById("lbPdf");
+  document.querySelectorAll(".cert-thumb").forEach(function (b) {
+    b.addEventListener("click", function () {
+      img.src = b.dataset.full;
+      img.alt = b.dataset.title;
+      title.textContent = b.dataset.title;
+      pdf.href = b.dataset.pdf;
+      dlg.showModal();
+    });
+  });
+  document.getElementById("lbClose").addEventListener("click", function () { dlg.close(); });
+  dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
 })();
 </script>
 </body>
