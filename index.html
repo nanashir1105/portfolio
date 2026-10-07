@@ -165,6 +165,18 @@
   .t-head { fill: #fff; font: 600 11px var(--mono); }
   .t-row { fill: var(--ink); font: 400 10.5px var(--mono); }
 
+
+  /* Photo cards, badges, links, wide panel */
+  .cert-thumb.crop img { aspect-ratio: 4 / 3; object-fit: cover; }
+  .art.photo { position: relative; background: var(--ink); }
+  .badge { position: absolute; left: .8rem; top: .8rem; z-index: 1; pointer-events: none; font-family: var(--display); font-weight: 800; font-size: .9rem; background: var(--yellow); color: var(--ink); padding: .25rem .8rem; border-radius: 999px; box-shadow: 0 6px 16px rgba(5,10,35,.35); }
+  .panel .links { margin: 1.1rem 0 0; font-family: var(--display); font-weight: 700; font-size: 1rem; }
+  .art.web { background: #FFF1C9; }
+  .s-sky { fill: #CFEFFA; }
+  .panel.wide { grid-column: 1 / -1; flex-direction: row; }
+  .panel.wide .art { flex: 0 0 44%; display: flex; align-items: center; }
+  .panel.wide .body { flex: 1; align-self: center; }
+
   /* Skills band */
   .band { background-color: var(--night); background-image: radial-gradient(rgba(255,255,255,.13) 1.2px, transparent 1.4px), linear-gradient(135deg, #0B1230, #14246B); background-size: 26px 26px, cover; color: #fff; }
   .band .block { border-top: 0; }
@@ -227,6 +239,8 @@
     .about-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 900px) {
+    .panel.wide { flex-direction: column; }
+    .panel.wide .art { flex: none; }
     .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; padding-bottom: 3.5rem; }
     .project-grid { grid-template-columns: 1fr; }
   }
@@ -463,56 +477,70 @@
         </article>
 
         <article class="panel">
-          <div class="art belt-art">
-            <svg viewBox="0 0 400 160" role="img" aria-label="Illustration of a colour sensor above a conveyor belt">
-              <rect class="s-deep" x="0" y="118" width="400" height="26"/>
-              <rect class="s-tool" x="0" y="118" width="400" height="4"/>
-              <rect class="s-white" x="36" y="66" width="60" height="52" rx="6"/>
-              <rect class="s-yellow" x="170" y="66" width="60" height="52" rx="6"/>
-              <rect class="s-mint" x="304" y="66" width="60" height="52" rx="6"/>
-              <rect class="s-steel" x="120" y="14" width="8" height="104"/>
-              <rect class="s-steel" x="272" y="14" width="8" height="104"/>
-              <rect class="s-steel" x="112" y="4" width="176" height="18" rx="9"/>
-              <rect class="s-beam" x="198.5" y="19" width="3" height="47"/>
-              <circle class="s-beam" cx="200" cy="13" r="6"/>
-            </svg>
+          <div class="art photo">
+            <button class="cert-thumb crop" type="button" data-full="images/iot-conveyor-prototype.jpg" data-title="Conveyor belt colour sorter prototype with its Arduino parts labelled" aria-label="View the conveyor belt prototype photo larger">
+              <img src="images/iot-conveyor-prototype.jpg" style="object-position: 50% 38%" alt="Cardboard conveyor belt prototype with labelled parts: ultrasonic sensor, TCS3200 colour sensor, servo motor, DC motor, traffic light LED module and buzzer" loading="lazy">
+            </button>
           </div>
           <div class="body">
             <h3>IoT-Based Conveyor Belt Color Sensor</h3>
             <p class="meta">Internet of Things, innovation project. Universiti Malaysia Sabah, Labuan International Campus. Mar 2024 to Jul 2024.</p>
-            <p>A conveyor belt that reads the colour of passing items and acts on it, using a colour sensor and automation logic written for Arduino. It is the project behind the belt at the top of this page.</p>
+            <p>A cardboard conveyor belt prototype that reads the colour of each item with a TCS3200 colour sensor and sorts it using automation logic written for Arduino. An ultrasonic sensor, servo motor, DC motor, traffic light LED module and buzzer complete the build.</p>
             <ul class="tags" aria-label="Technologies used">
-              <li>Arduino IDE</li><li>C++</li><li>Colour sensor</li><li>Automation logic</li>
+              <li>Arduino IDE</li><li>C++</li><li>TCS3200 colour sensor</li><li>Ultrasonic sensor</li><li>Servo and DC motors</li>
             </ul>
           </div>
         </article>
 
         <article class="panel">
-          <div class="art dark">
-            <svg viewBox="0 0 400 160" role="img" aria-label="Illustration of a VR headset with a floating 3D cube">
-              <path class="s-floor" d="M0 134h400M0 148h400M100 134L60 160M200 134v26M300 134l40 26"/>
-              <polygon class="s-mint" points="46,34 74,46 46,58 18,46"/>
-              <polygon class="s-white" points="18,46 46,58 46,92 18,80"/>
-              <polygon class="s-yellow" points="46,58 74,46 74,80 46,92"/>
-              <rect class="s-steel" x="94" y="68" width="26" height="30" rx="6"/>
-              <rect class="s-steel" x="280" y="68" width="26" height="30" rx="6"/>
-              <rect class="s-steel" x="116" y="38" width="168" height="82" rx="28"/>
-              <rect class="s-deep" x="128" y="50" width="144" height="58" rx="20"/>
-              <circle class="s-tool" cx="170" cy="79" r="17"/>
-              <circle class="s-tool" cx="230" cy="79" r="17"/>
-              <circle class="s-mint" cx="170" cy="79" r="8"/>
-              <circle class="s-mint" cx="230" cy="79" r="8"/>
-              <circle class="s-ring" cx="350" cy="64" r="22"/>
-              <circle class="s-yellow" cx="350" cy="64" r="6"/>
+          <div class="art photo">
+            <span class="badge">First Prize</span>
+            <button class="cert-thumb crop" type="button" data-full="images/arbook-first-prize.jpg" data-title="The ARbook team receiving First Prize in the Sabah Folklore Storybook competition" aria-label="View the First Prize team photo larger">
+              <img src="images/arbook-first-prize.jpg" alt="The ARbook team holding a First Prize placard for the Sabah Folklore Storybook competition" loading="lazy">
+            </button>
+          </div>
+          <div class="body">
+            <h3>ARbook: Kura-Kura &amp; Monyet</h3>
+            <p class="meta">Augmented and Virtual Reality coursework, group project. Universiti Malaysia Sabah, Labuan International Campus. Oct 2023 to Feb 2024.</p>
+            <p>An augmented reality storybook that retells the Sabah folktale of the tortoise and the monkey. Readers scan the book to see the story come to life, and the companion website offers it in Malay and Dusun. The team won First Prize in the Sabah Folklore Storybook competition.</p>
+            <ul class="tags" aria-label="Technologies and themes">
+              <li>Augmented reality</li><li>Sabah folklore</li><li>Malay and Dusun</li><li>Website</li>
+            </ul>
+            <p class="links"><a href="https://nanashir1105.github.io/arbook-group2/" target="_blank" rel="noopener">Visit the ARbook site</a></p>
+          </div>
+        </article>
+
+        <article class="panel wide">
+          <div class="art web">
+            <svg viewBox="0 0 400 160" role="img" aria-label="Illustration of a campus website with a beach scene">
+              <rect class="s-card" x="50" y="12" width="300" height="136" rx="8"/>
+              <path class="s-cobalt" d="M50 20a8 8 0 0 1 8-8h284a8 8 0 0 1 8 8v16H50z"/>
+              <circle class="s-white" cx="64" cy="24" r="3.5"/>
+              <circle class="s-yellow" cx="77" cy="24" r="3.5"/>
+              <circle class="s-mint" cx="90" cy="24" r="3.5"/>
+              <rect class="s-white" x="130" y="20" width="30" height="8" rx="4" opacity=".85"/>
+              <rect class="s-white" x="166" y="20" width="30" height="8" rx="4" opacity=".85"/>
+              <rect class="s-white" x="202" y="20" width="30" height="8" rx="4" opacity=".85"/>
+              <rect class="s-white" x="238" y="20" width="30" height="8" rx="4" opacity=".85"/>
+              <rect class="s-sky" x="58" y="44" width="284" height="96"/>
+              <circle class="s-yellow" cx="302" cy="68" r="14"/>
+              <polygon class="s-ink" points="104,72 153,52 202,72"/>
+              <rect class="s-card" x="110" y="72" width="86" height="42" rx="3"/>
+              <rect class="s-cobalt" x="122" y="84" width="14" height="14"/>
+              <rect class="s-cobalt" x="146" y="84" width="14" height="14"/>
+              <rect class="s-cobalt" x="170" y="84" width="14" height="14"/>
+              <path class="s-mint" d="M58 118q18-14 36 0t36 0t36 0t36 0t36 0t36 0t36 0t36 0V140H58z"/>
+              <path class="s-cobalt" d="M58 128q18-14 36 0t36 0t36 0t36 0t36 0t36 0t36 0t36 0V140H58z"/>
             </svg>
           </div>
           <div class="body">
-            <h3>Augmented and Virtual Reality</h3>
-            <p class="meta">AR and VR coursework. Universiti Malaysia Sabah, Labuan International Campus. Oct 2023 to Feb 2024.</p>
-            <p>Coursework in AR and VR, building interactive and immersive digital experiences through hands-on projects.</p>
+            <h3>UMSKAL Beach Campus Website</h3>
+            <p class="meta">Course project. Universiti Malaysia Sabah, Labuan International Campus.</p>
+            <p>A multi-page website for the UMS Labuan International Campus. It has a video welcome, pages for About, Academics, Faculty, Events, Gallery and Contact, and quick links to staff, student and learning portals.</p>
             <ul class="tags" aria-label="Focus areas">
-              <li>Augmented reality</li><li>Virtual reality</li><li>Interactive media</li>
+              <li>Web design</li><li>Multi-page website</li><li>Video header</li>
             </ul>
+            <p class="links"><a href="https://nanashir1105.github.io/UMSKAL_Beach_Campus/" target="_blank" rel="noopener">Visit the campus site</a></p>
           </div>
         </article>
       </div>
@@ -639,7 +667,7 @@
 </main>
 
 <footer>
-  <div class="wrap">&copy; 2026 Nurul Jannah Bashir Mohd.</div>
+  <div class="wrap">&copy; 2026 Nurul Jannah Bashir Mohd. Built with plain HTML, CSS and JavaScript.</div>
 </footer>
 
 <script>
@@ -750,7 +778,7 @@
       img.src = b.dataset.full;
       img.alt = b.dataset.title;
       title.textContent = b.dataset.title;
-      pdf.href = b.dataset.pdf;
+      if (b.dataset.pdf) { pdf.href = b.dataset.pdf; pdf.hidden = false; } else { pdf.hidden = true; }
       dlg.showModal();
     });
   });
