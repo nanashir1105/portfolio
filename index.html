@@ -3,207 +3,221 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2B4EFF">
 <title>Nurul Jannah Bashir Mohd | Software Developer</title>
 <meta name="description" content="Portfolio of Nurul Jannah Bashir Mohd, a software developer in Petaling Jaya, Malaysia, building Laravel and PHP web systems.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232B4EFF'/%3E%3Ctext x='50' y='68' font-size='56' font-family='Arial' font-weight='700' text-anchor='middle' fill='%23fff'%3ENJ%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #F2F4F7;
     --surface: #FFFFFF;
     --ink: #101B3A;
     --ink-soft: #4A5472;
-    --rule: #CFD5E0;
+    --rule: #D3D9E4;
     --cobalt: #2B4EFF;
+    --cobalt-tint: #DCE3FF;
     --yellow: #FFC93C;
-    --teal: #0E8A7D;
-    --beam: #D12B45;
+    --mint: #4FD8C0;
+    --beam: #FF4D6D;
     --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
     --body: "Source Serif 4", Georgia, "Times New Roman", serif;
   }
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--body);
-    font-size: 1.125rem;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.125rem; line-height: 1.65; -webkit-font-smoothing: antialiased; }
   a { color: var(--cobalt); text-underline-offset: 3px; }
   a:hover { color: var(--ink); }
   :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 4px; }
-  .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: #fff; padding: .5rem .9rem; border-radius: 6px; z-index: 10; }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: #fff; padding: .5rem .9rem; border-radius: 6px; z-index: 20; }
   .skip:focus { left: 8px; }
-
   .wrap { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
 
-  /* Header */
+  /* ---------- Hero ---------- */
+  .hero { background: var(--cobalt); color: #fff; }
+  .hero :focus-visible { outline-color: var(--yellow); }
   .topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 2rem; padding: 1.4rem 0; font-family: var(--display); font-weight: 500; font-size: 1rem; }
-  .topbar .mark { font-weight: 800; text-decoration: none; color: var(--ink); letter-spacing: -.01em; }
+  .topbar .mark { font-weight: 800; color: #fff; text-decoration: none; letter-spacing: -.01em; }
   .topbar nav { display: flex; flex-wrap: wrap; gap: .4rem 1.5rem; }
-  .topbar nav a { color: var(--ink-soft); text-decoration: none; }
-  .topbar nav a:hover { color: var(--cobalt); text-decoration: underline; text-underline-offset: 6px; }
-
-  /* Hero */
-  .hero { padding: 3.5rem 0 3rem; }
-  h1 {
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: clamp(2.7rem, 8.6vw, 6.4rem);
-    line-height: .95;
-    letter-spacing: -.035em;
-    margin: 0 0 1.5rem;
-    max-width: 12ch;
-  }
-  .role { font-family: var(--display); font-weight: 500; font-size: clamp(1.2rem, 2.6vw, 1.6rem); line-height: 1.3; margin: 0 0 .5rem; max-width: 30ch; }
-  .where { margin: 0 0 2rem; color: var(--ink-soft); }
+  .topbar nav a { color: #E4E9FF; text-decoration: none; }
+  .topbar nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 6px; }
+  .hero-copy { padding: 3.5rem 0 3.5rem; }
+  h1 { font-family: var(--display); font-weight: 800; font-size: clamp(3rem, 10.5vw, 7.6rem); line-height: .92; letter-spacing: -.04em; margin: 0 0 1.6rem; color: #fff; }
+  .role { font-family: var(--display); font-weight: 500; font-size: clamp(1.25rem, 2.8vw, 1.75rem); line-height: 1.3; margin: 0 0 .6rem; max-width: 32ch; }
+  .where { margin: 0 0 2.2rem; color: #E4E9FF; }
   .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn { display: inline-block; font-family: var(--display); font-weight: 700; font-size: 1rem; padding: .8rem 1.3rem; border-radius: 10px; text-decoration: none; border: 2px solid var(--ink); }
-  .btn.primary { background: var(--ink); color: #fff; }
-  .btn.primary:hover { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
-  .btn.ghost { background: transparent; color: var(--ink); }
-  .btn.ghost:hover { background: var(--ink); color: #fff; }
+  .btn { display: inline-block; font-family: var(--display); font-weight: 700; font-size: 1rem; padding: .85rem 1.4rem; border-radius: 10px; text-decoration: none; border: 2px solid #fff; }
+  .btn.primary { background: var(--yellow); border-color: var(--yellow); color: var(--ink); }
+  .btn.primary:hover { background: #fff; border-color: #fff; color: var(--ink); }
+  .btn.ghost { background: transparent; color: #fff; }
+  .btn.ghost:hover { background: #fff; color: var(--cobalt); }
 
-  /* Conveyor belt (the one memorable element) */
-  .line { margin-top: 3.5rem; }
-  .belt-stage { position: relative; background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; padding: 2.4rem 0 0; }
-  .belt-viewport { position: relative; height: 84px; overflow: hidden; }
-  .belt-track { position: absolute; left: 0; top: 10px; display: flex; gap: 14px; will-change: transform; }
-  .chip { flex: 0 0 112px; height: 64px; border-radius: 12px; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 1.05rem; }
-  .chip.lang { background: var(--cobalt); color: #fff; }
+  /* Conveyor belt: the one memorable element */
+  .belt-viewport { position: relative; height: 124px; overflow: hidden; }
+  .belt-track { position: absolute; left: 0; top: 30px; display: flex; gap: 16px; will-change: transform; }
+  .chip { flex: 0 0 132px; height: 76px; border-radius: 14px; display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 1.15rem; transition: transform .2s ease; }
+  .chip.lang { background: #fff; color: var(--ink); }
   .chip.frame { background: var(--yellow); color: var(--ink); }
-  .chip.data { background: var(--teal); color: #fff; }
-  .chip.tool { background: var(--ink); color: #fff; }
-  .belt-band {
-    height: 22px;
-    background:
-      repeating-linear-gradient(90deg, #2A365C 0 18px, #1B2748 18px 36px);
-    border-top: 3px solid #0A1228;
-  }
-  .gantry { position: absolute; left: 50%; top: 0; width: 148px; margin-left: -74px; height: 108px; pointer-events: none; }
-  .gantry::before, .gantry::after { content: ""; position: absolute; top: 12px; width: 6px; height: 96px; background: var(--ink); border-radius: 3px; }
-  .gantry::before { left: 0; }
-  .gantry::after { right: 0; }
-  .gantry .bar { position: absolute; left: -6px; right: -6px; top: 0; height: 16px; background: var(--ink); border-radius: 8px; }
-  .gantry .beam { position: absolute; left: 50%; top: 16px; width: 2px; height: 92px; margin-left: -1px; background: var(--beam); box-shadow: 0 0 10px 2px rgba(209,43,69,.55); }
-  .readout { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; padding: .9rem 1.2rem; font-family: var(--display); font-size: .98rem; border-top: 1px solid var(--rule); }
-  .readout .reading { display: flex; align-items: center; gap: .6rem; min-height: 1.6em; }
-  .swatch { width: 14px; height: 14px; border-radius: 4px; background: var(--cobalt); flex: none; }
-  .readout .note { color: var(--ink-soft); }
-  .belt-ctl { font: inherit; font-weight: 700; color: var(--ink); background: transparent; border: 2px solid var(--ink); border-radius: 8px; padding: .25rem .8rem; cursor: pointer; }
-  .belt-ctl:hover { background: var(--ink); color: #fff; }
-  .belt-caption { margin: .9rem 0 0; color: var(--ink-soft); font-size: 1rem; max-width: 62ch; }
+  .chip.data { background: var(--mint); color: var(--ink); }
+  .chip.tool { background: var(--ink); color: #fff; box-shadow: inset 0 0 0 2px rgba(255,255,255,.28); }
+  .chip.active { transform: translateY(-10px); }
+  .gantry { position: absolute; left: 50%; top: 0; width: 210px; margin-left: -105px; height: 124px; pointer-events: none; }
+  .gantry .post { position: absolute; top: 14px; width: 8px; height: 110px; background: var(--ink); }
+  .gantry .post.l { left: 0; }
+  .gantry .post.r { right: 0; }
+  .gantry .bar { position: absolute; left: -10px; right: -10px; top: 0; height: 22px; background: var(--ink); border-radius: 11px; }
+  .gantry .bar::after { content: ""; position: absolute; left: 50%; top: 5px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--beam); }
+  .gantry .beam { position: absolute; left: 50%; top: 22px; width: 3px; height: 102px; margin-left: -1.5px; background: var(--beam); box-shadow: 0 0 12px 3px rgba(255,77,109,.6); }
+  .belt-band { height: 30px; background: repeating-linear-gradient(90deg, #16258A 0 20px, #101B6B 20px 40px); border-top: 4px solid #0A1248; }
+  .readout-strip { background: var(--ink); color: #fff; }
+  .readout { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 1.5rem; padding: .9rem 0; font-family: var(--display); }
+  .reading { display: flex; align-items: center; gap: .7rem; font-size: 1.05rem; color: #C9D0EA; }
+  .reading strong { color: #fff; font-size: 1.4rem; font-weight: 700; letter-spacing: -.01em; }
+  .swatch { width: 16px; height: 16px; border-radius: 5px; background: #fff; flex: none; }
+  .belt-ctl { font: inherit; font-weight: 700; font-size: .95rem; color: #fff; background: transparent; border: 2px solid #fff; border-radius: 8px; padding: .3rem .9rem; cursor: pointer; }
+  .belt-ctl:hover { background: #fff; color: var(--ink); }
+  .readout-strip :focus-visible { outline-color: var(--yellow); }
 
-  /* Sections */
-  .block { display: grid; grid-template-columns: 210px 1fr; gap: 1.25rem 3rem; padding: 4.5rem 0; border-top: 1px solid var(--rule); }
-  .block > h2 { font-family: var(--display); font-weight: 800; font-size: 1.7rem; letter-spacing: -.02em; line-height: 1.1; margin: 0; }
+  /* ---------- Sections ---------- */
+  .block { display: grid; grid-template-columns: 210px 1fr; gap: 1.25rem 3rem; padding: 5rem 0; border-top: 1px solid var(--rule); }
+  .block:first-of-type { border-top: 0; }
+  .block > h2 { font-family: var(--display); font-weight: 800; font-size: 2rem; letter-spacing: -.025em; line-height: 1.05; margin: 0; }
   .prose { max-width: 62ch; }
   .prose p { margin: 0 0 1.1em; }
   .prose p:last-child { margin-bottom: 0; }
-  .lead { font-size: 1.35rem; line-height: 1.5; }
+  .lead { font-size: 1.4rem; line-height: 1.5; }
 
-  /* Experience timeline: a real sequence, so a line is meaningful */
-  .timeline { list-style: none; margin: 0; padding: 0 0 0 1.75rem; border-left: 3px solid var(--ink); display: grid; gap: 3rem; max-width: 70ch; }
-  .timeline > li { position: relative; }
-  .timeline > li::before { content: ""; position: absolute; left: calc(-1.75rem - 9px); top: .55rem; width: 15px; height: 15px; border-radius: 50%; background: var(--paper); border: 3px solid var(--cobalt); }
-  .job-head { font-family: var(--display); font-weight: 700; font-size: 1.35rem; line-height: 1.25; margin: 0; letter-spacing: -.01em; }
-  .job-meta { margin: .2rem 0 .9rem; color: var(--ink-soft); }
-  ul.plain { margin: 0; padding-left: 1.2rem; }
+  /* Experience */
+  .job { display: grid; grid-template-columns: 10rem 1fr; gap: .4rem 2rem; padding: 2rem 0; border-top: 1px solid var(--rule); }
+  .job:first-child { border-top: 0; padding-top: 0; }
+  .job-date { font-family: var(--display); font-weight: 700; color: var(--cobalt); line-height: 1.4; padding-top: .3rem; }
+  .job h3 { font-family: var(--display); font-weight: 800; font-size: 1.55rem; line-height: 1.15; letter-spacing: -.02em; margin: 0; }
+  .company { margin: .15rem 0 1rem; font-weight: 600; color: var(--ink-soft); }
+  ul.plain { margin: 0; padding-left: 1.2rem; max-width: 62ch; }
   ul.plain li { margin-bottom: .5rem; padding-left: .2rem; }
   ul.plain li::marker { color: var(--cobalt); }
 
   /* Projects */
-  .projects { display: grid; gap: 3rem; max-width: 70ch; }
-  .project h3 { font-family: var(--display); font-weight: 800; font-size: clamp(1.5rem, 3.6vw, 2.1rem); line-height: 1.1; letter-spacing: -.025em; margin: 0 0 .35rem; }
-  .project .meta { margin: 0 0 .9rem; color: var(--ink-soft); }
-  .project p { margin: 0 0 1rem; }
+  .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; }
+  .panel .art { display: block; }
+  .panel .art svg { display: block; width: 100%; height: auto; }
+  .art.shelf { background: var(--cobalt-tint); }
+  .art.belt-art { background: var(--cobalt); }
+  .panel .body { padding: 1.4rem 1.5rem 1.7rem; }
+  .panel h3 { font-family: var(--display); font-weight: 800; font-size: 1.5rem; line-height: 1.15; letter-spacing: -.02em; margin: 0 0 .3rem; }
+  .panel .meta { margin: 0 0 .9rem; color: var(--ink-soft); font-size: 1rem; }
+  .panel p { margin: 0 0 1.1rem; font-size: 1.05rem; line-height: 1.6; }
   .tags { display: flex; flex-wrap: wrap; gap: .45rem; list-style: none; padding: 0; margin: 0; }
-  .tags li { font-family: var(--display); font-weight: 500; font-size: .92rem; padding: .2rem .7rem; border-radius: 999px; border: 1.5px solid var(--ink); }
-  .project + .project { padding-top: 3rem; border-top: 1px dashed var(--rule); }
+  .tags li { font-family: var(--display); font-weight: 600; font-size: .9rem; padding: .15rem .7rem; border-radius: 999px; border: 2px solid var(--ink); }
+  .s-ink { fill: var(--ink); } .s-cobalt { fill: var(--cobalt); } .s-yellow { fill: var(--yellow); }
+  .s-mint { fill: var(--mint); } .s-white { fill: #fff; } .s-beam { fill: var(--beam); } .s-band { fill: #0A1248; }
 
   /* Skills */
-  .skills { margin: 0; display: grid; grid-template-columns: 11rem 1fr; gap: 1rem 2rem; max-width: 70ch; }
-  .skills dt { font-family: var(--display); font-weight: 700; }
-  .skills dd { margin: 0; }
+  .skills-note { margin: 0 0 1.5rem; color: var(--ink-soft); max-width: 62ch; font-size: 1.05rem; }
+  .skill-row { display: grid; grid-template-columns: 11rem 1fr; gap: .6rem 2rem; padding: 1.1rem 0; border-top: 1px solid var(--rule); }
+  .skill-row h3 { font-family: var(--display); font-weight: 700; font-size: 1.05rem; line-height: 1.7; margin: 0; }
+  .pills { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; margin: 0; padding: 0; }
+  .pill { font-family: var(--display); font-weight: 600; font-size: .98rem; padding: .3rem .9rem; border-radius: 999px; border: 2px solid var(--ink); color: var(--ink); background: transparent; }
+  .pill.lang { background: #fff; }
+  .pill.frame { background: var(--yellow); }
+  .pill.data { background: var(--mint); }
+  .pill.tool { background: var(--ink); color: #fff; }
+  .pill.plain { border-color: var(--rule); background: var(--surface); }
 
   /* Education */
-  .edu { display: grid; gap: 2rem; max-width: 70ch; }
-  .edu h3 { font-family: var(--display); font-weight: 700; font-size: 1.2rem; line-height: 1.3; margin: 0; }
-  .edu .meta { margin: .15rem 0 .5rem; color: var(--ink-soft); }
-  .edu ul { margin: 0; padding-left: 1.2rem; }
-  .sub { font-family: var(--display); font-weight: 800; font-size: 1.2rem; margin: 3rem 0 .8rem; letter-spacing: -.01em; }
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .edu-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; padding: 1.5rem; }
+  .edu-card.main { grid-column: 1 / -1; border-left: 6px solid var(--cobalt); }
+  .edu-card h3 { font-family: var(--display); font-weight: 700; font-size: 1.15rem; line-height: 1.3; margin: 0; }
+  .edu-card.main h3 { font-size: 1.5rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.2; }
+  .edu-card .meta { margin: .2rem 0 .7rem; color: var(--ink-soft); }
+  .edu-card ul { margin: 0; padding-left: 1.2rem; }
+  .sub { font-family: var(--display); font-weight: 800; font-size: 1.3rem; letter-spacing: -.01em; margin: 3rem 0 .9rem; }
 
   /* Contact */
-  .contact-list { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; gap: .5rem; font-family: var(--display); font-weight: 500; }
-  .contact-list span { display: inline-block; min-width: 6.5rem; color: var(--ink-soft); }
-  .big-mail { font-family: var(--display); font-weight: 800; font-size: clamp(1.4rem, 4.4vw, 2.6rem); letter-spacing: -.025em; line-height: 1.15; word-break: break-word; }
+  .contact { background: var(--yellow); color: var(--ink); padding: 5rem 0; }
+  .contact h2 { font-family: var(--display); font-weight: 800; font-size: 2rem; letter-spacing: -.025em; line-height: 1.05; margin: 0 0 1rem; }
+  .contact p { margin: 0 0 1.2rem; max-width: 52ch; }
+  .contact a { color: var(--ink); }
+  .contact a:hover { color: var(--cobalt); }
+  .contact :focus-visible { outline-color: var(--ink); }
+  .big-mail { display: inline-block; font-family: var(--display); font-weight: 800; font-size: clamp(1.5rem, 5.6vw, 3.6rem); letter-spacing: -.035em; line-height: 1.1; word-break: break-word; }
+  .contact-list { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: .5rem; font-family: var(--display); font-weight: 500; }
+  .contact-list span { display: inline-block; min-width: 6.5rem; font-weight: 700; }
 
-  footer { border-top: 1px solid var(--rule); padding: 2rem 0 3rem; color: var(--ink-soft); font-size: .95rem; }
+  footer { background: var(--ink); color: #B9C1DE; padding: 1.6rem 0; font-size: .95rem; }
 
+  @media (max-width: 900px) {
+    .project-grid { grid-template-columns: 1fr; }
+  }
   @media (max-width: 760px) {
-    .block { grid-template-columns: 1fr; padding: 3.2rem 0; }
-    .skills { grid-template-columns: 1fr; gap: .15rem; }
-    .skills dd { margin-bottom: 1rem; }
-    .hero { padding-top: 2rem; }
+    .block { grid-template-columns: 1fr; padding: 3.4rem 0; }
+    .job { grid-template-columns: 1fr; }
+    .skill-row { grid-template-columns: 1fr; gap: .3rem; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .hero-copy { padding: 2rem 0 2.5rem; }
+    .belt-viewport { height: 112px; }
+    .chip { flex-basis: 112px; height: 68px; font-size: 1.05rem; }
+    .gantry { width: 170px; margin-left: -85px; }
+    .contact { padding: 3.4rem 0; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
+    .chip { transition: none; }
   }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="wrap">
-  <header class="topbar">
-    <a class="mark" href="#top">Nurul Jannah</a>
-    <nav aria-label="Main">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-</div>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="mark" href="#top">Nurul Jannah</a>
+      <nav aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="hero-copy">
+      <h1>Nurul Jannah<br>Bashir Mohd</h1>
+      <p class="role">Software developer building Laravel systems for production and sales teams.</p>
+      <p class="where">Petaling Jaya, Selangor, Malaysia. Open to software developer roles.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:nuruljannah3019@gmail.com">Email me</a>
+        <a class="btn ghost" href="#projects">See my projects</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="belt" aria-hidden="true">
+    <div class="belt-viewport" id="viewport">
+      <div class="belt-track" id="track"></div>
+      <div class="gantry"><div class="post l"></div><div class="post r"></div><div class="bar"></div><div class="beam"></div></div>
+    </div>
+    <div class="belt-band" id="band"></div>
+  </div>
+
+  <div class="readout-strip">
+    <div class="wrap readout">
+      <div class="reading" aria-hidden="true">
+        <span class="swatch" id="swatch"></span>
+        <span>Sensor reads <strong id="rName">PHP</strong> <span id="rNote">language</span></span>
+      </div>
+      <button class="belt-ctl" id="beltBtn" type="button" aria-pressed="false">Pause belt</button>
+    </div>
+  </div>
+</header>
 
 <main id="main">
-  <section class="hero wrap" id="top">
-    <h1>Nurul Jannah Bashir Mohd</h1>
-    <p class="role">Software developer building Laravel systems for production and sales teams.</p>
-    <p class="where">Petaling Jaya, Selangor, Malaysia. Open to software developer roles.</p>
-    <div class="actions">
-      <a class="btn primary" href="mailto:nuruljannah3019@gmail.com">Email me</a>
-      <a class="btn ghost" href="#projects">See my projects</a>
-    </div>
-
-    <div class="line">
-      <div class="belt-stage">
-        <div id="belt" aria-hidden="true">
-          <div class="belt-viewport" id="viewport">
-            <div class="belt-track" id="track"></div>
-            <div class="gantry"><div class="bar"></div><div class="beam"></div></div>
-          </div>
-          <div class="belt-band"></div>
-        </div>
-        <div class="readout">
-          <div class="reading" aria-hidden="true">
-            <span class="swatch" id="swatch"></span>
-            <span><strong id="rName">PHP</strong> <span class="note" id="rNote">language</span></span>
-          </div>
-          <button class="belt-ctl" id="beltBtn" type="button" aria-pressed="false">Pause belt</button>
-        </div>
-      </div>
-      <p class="belt-caption">My tools, passing under a colour sensor. It is a nod to the conveyor belt sorting project I built at university. The full list is in <a href="#skills">Skills</a>.</p>
-    </div>
-  </section>
-
   <div class="wrap">
     <section class="block" id="about">
       <h2>About</h2>
@@ -216,96 +230,157 @@
 
     <section class="block" id="experience">
       <h2>Experience</h2>
-      <ol class="timeline">
-        <li>
-          <h3 class="job-head">Software Developer, IA SoftTech Sdn. Bhd.</h3>
-          <p class="job-meta">Sept 2025 to Oct 2026</p>
-          <ul class="plain">
-            <li>Developed and enhanced Laravel-based production and sales management systems.</li>
-            <li>Built features and fixed system issues using PHP and PostgreSQL.</li>
-            <li>Gave helpdesk and technical support to users, troubleshooting system and application problems.</li>
-            <li>Handled testing, debugging, deployment and ongoing maintenance.</li>
-            <li>Wrote BRD, FSD and TSD documentation and worked with project managers, QA teams, vendors and clients.</li>
-          </ul>
-        </li>
-        <li>
-          <h3 class="job-head">Intern, Department of Chemistry Malaysia</h3>
-          <p class="job-meta">Mar 2025 to Aug 2025</p>
-          <ul class="plain">
-            <li>Supported the enhancement and maintenance of the SoftExpert Internal Audit System.</li>
-            <li>Helped users with system-related issues.</li>
-            <li>Did data analysis, reporting, automation and technical documentation.</li>
-          </ul>
-        </li>
-      </ol>
+      <div>
+        <article class="job">
+          <div class="job-date">Sept 2025 to Oct 2026</div>
+          <div>
+            <h3>Software Developer</h3>
+            <p class="company">IA SoftTech Sdn. Bhd.</p>
+            <ul class="plain">
+              <li>Developed and enhanced Laravel-based production and sales management systems.</li>
+              <li>Built features and fixed system issues using PHP and PostgreSQL.</li>
+              <li>Gave helpdesk and technical support to users, troubleshooting system and application problems.</li>
+              <li>Handled testing, debugging, deployment and ongoing maintenance.</li>
+              <li>Wrote BRD, FSD and TSD documentation and worked with project managers, QA teams, vendors and clients.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="job">
+          <div class="job-date">Mar 2025 to Aug 2025</div>
+          <div>
+            <h3>Intern</h3>
+            <p class="company">Department of Chemistry Malaysia</p>
+            <ul class="plain">
+              <li>Supported the enhancement and maintenance of the SoftExpert Internal Audit System.</li>
+              <li>Helped users with system-related issues.</li>
+              <li>Did data analysis, reporting, automation and technical documentation.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="block" id="projects">
       <h2>Projects</h2>
-      <div class="projects">
-        <article class="project">
-          <h3>Inventory Management System</h3>
-          <p class="meta">Final year project, Universiti Malaysia Sabah. Mar 2024 to Mar 2025.</p>
-          <p>A web application for managing inventory, built with Laravel, PHP and MySQL. The project put database design and web application development into practice from the first schema to the finished interface.</p>
-          <ul class="tags" aria-label="Technologies used">
-            <li>Laravel</li><li>PHP</li><li>MySQL</li>
-          </ul>
+      <div class="project-grid">
+        <article class="panel">
+          <div class="art shelf">
+            <svg viewBox="0 0 400 190" role="img" aria-label="Illustration of stocked inventory shelves">
+              <rect class="s-ink" x="20" y="22" width="6" height="156"/>
+              <rect class="s-ink" x="374" y="22" width="6" height="156"/>
+              <rect class="s-ink" x="14" y="100" width="372" height="6" rx="3"/>
+              <rect class="s-ink" x="14" y="172" width="372" height="6" rx="3"/>
+              <rect class="s-cobalt" x="40" y="50" width="62" height="50" rx="3"/>
+              <rect class="s-yellow" x="112" y="66" width="50" height="34" rx="3"/>
+              <rect class="s-mint" x="172" y="40" width="72" height="60" rx="3"/>
+              <rect class="s-ink" x="254" y="60" width="46" height="40" rx="3"/>
+              <rect class="s-cobalt" x="310" y="48" width="54" height="52" rx="3"/>
+              <rect class="s-mint" x="40" y="132" width="54" height="40" rx="3"/>
+              <rect class="s-yellow" x="104" y="114" width="70" height="58" rx="3"/>
+              <rect class="s-cobalt" x="184" y="134" width="50" height="38" rx="3"/>
+              <rect class="s-ink" x="244" y="112" width="72" height="60" rx="3"/>
+              <rect class="s-yellow" x="326" y="128" width="38" height="44" rx="3"/>
+              <rect class="s-white" x="48" y="58" width="22" height="6" rx="2" opacity=".85"/>
+              <rect class="s-white" x="180" y="48" width="26" height="6" rx="2" opacity=".85"/>
+              <rect class="s-white" x="318" y="56" width="20" height="6" rx="2" opacity=".85"/>
+              <rect class="s-white" x="112" y="122" width="26" height="6" rx="2" opacity=".85"/>
+              <rect class="s-white" x="252" y="120" width="26" height="6" rx="2" opacity=".85"/>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>Inventory Management System</h3>
+            <p class="meta">Final year project, Universiti Malaysia Sabah. Mar 2024 to Mar 2025.</p>
+            <p>A web application for managing inventory, built with Laravel, PHP and MySQL. It put database design and web application development into practice, from the first schema to the finished interface.</p>
+            <ul class="tags" aria-label="Technologies used">
+              <li>Laravel</li><li>PHP</li><li>MySQL</li>
+            </ul>
+          </div>
         </article>
-        <article class="project">
-          <h3>IoT-Based Conveyor Belt Color Sensor</h3>
-          <p class="meta">Universiti Malaysia Sabah. Mar 2024 to Jul 2024.</p>
-          <p>A conveyor belt that reads the colour of passing items and acts on it, using a colour sensor and automation logic written for Arduino. This is the project behind the belt at the top of this page.</p>
-          <ul class="tags" aria-label="Technologies used">
-            <li>Arduino IDE</li><li>C++</li><li>Colour sensor</li><li>Automation logic</li>
-          </ul>
+
+        <article class="panel">
+          <div class="art belt-art">
+            <svg viewBox="0 0 400 190" role="img" aria-label="Illustration of a colour sensor above a conveyor belt">
+              <rect class="s-ink" x="0" y="148" width="400" height="26"/>
+              <rect class="s-band" x="0" y="148" width="400" height="4"/>
+              <rect class="s-white" x="36" y="96" width="60" height="52" rx="6"/>
+              <rect class="s-yellow" x="170" y="96" width="60" height="52" rx="6"/>
+              <rect class="s-mint" x="304" y="96" width="60" height="52" rx="6"/>
+              <rect class="s-ink" x="120" y="26" width="8" height="122"/>
+              <rect class="s-ink" x="272" y="26" width="8" height="122"/>
+              <rect class="s-ink" x="112" y="14" width="176" height="18" rx="9"/>
+              <rect class="s-beam" x="198.5" y="29" width="3" height="67"/>
+              <circle class="s-beam" cx="200" cy="23" r="6"/>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>IoT-Based Conveyor Belt Color Sensor</h3>
+            <p class="meta">Universiti Malaysia Sabah. Mar 2024 to Jul 2024.</p>
+            <p>A conveyor belt that reads the colour of passing items and acts on it, using a colour sensor and automation logic written for Arduino. It is the project behind the belt at the top of this page.</p>
+            <ul class="tags" aria-label="Technologies used">
+              <li>Arduino IDE</li><li>C++</li><li>Colour sensor</li><li>Automation logic</li>
+            </ul>
+          </div>
         </article>
       </div>
     </section>
 
     <section class="block" id="skills">
       <h2>Skills</h2>
-      <dl class="skills">
-        <dt>Languages</dt>
-        <dd>PHP, JavaScript, Java, HTML, CSS, C++</dd>
-        <dt>Frameworks and libraries</dt>
-        <dd>Laravel, React.js</dd>
-        <dt>Databases</dt>
-        <dd>PostgreSQL, MySQL, Supabase</dd>
-        <dt>Tools</dt>
-        <dd>Git, GitHub, Visual Studio Code, XAMPP, Arduino IDE</dd>
-        <dt>Practice</dt>
-        <dd>Full-stack development, REST APIs, ERD design, software testing, debugging, deployment, technical documentation</dd>
-        <dt>Also</dt>
-        <dd>IoT sensor integration, AR/VR</dd>
-      </dl>
+      <div>
+        <p class="skills-note">The colours match the belt at the top of the page: white for languages, yellow for frameworks and libraries, green for databases, dark blue for tools.</p>
+        <div class="skill-row">
+          <h3>Languages</h3>
+          <ul class="pills"><li class="pill lang">PHP</li><li class="pill lang">JavaScript</li><li class="pill lang">Java</li><li class="pill lang">HTML</li><li class="pill lang">CSS</li><li class="pill lang">C++</li></ul>
+        </div>
+        <div class="skill-row">
+          <h3>Frameworks and libraries</h3>
+          <ul class="pills"><li class="pill frame">Laravel</li><li class="pill frame">React.js</li></ul>
+        </div>
+        <div class="skill-row">
+          <h3>Databases</h3>
+          <ul class="pills"><li class="pill data">PostgreSQL</li><li class="pill data">MySQL</li><li class="pill data">Supabase</li></ul>
+        </div>
+        <div class="skill-row">
+          <h3>Tools</h3>
+          <ul class="pills"><li class="pill tool">Git</li><li class="pill tool">GitHub</li><li class="pill tool">Visual Studio Code</li><li class="pill tool">XAMPP</li><li class="pill tool">Arduino IDE</li></ul>
+        </div>
+        <div class="skill-row">
+          <h3>Practice</h3>
+          <ul class="pills"><li class="pill plain">Full-stack development</li><li class="pill plain">REST APIs</li><li class="pill plain">ERD design</li><li class="pill plain">Software testing</li><li class="pill plain">Debugging</li><li class="pill plain">Deployment</li><li class="pill plain">Technical documentation</li></ul>
+        </div>
+        <div class="skill-row">
+          <h3>Also</h3>
+          <ul class="pills"><li class="pill plain">IoT sensor integration</li><li class="pill plain">AR/VR</li></ul>
+        </div>
+      </div>
     </section>
 
     <section class="block" id="education">
       <h2>Education and awards</h2>
       <div>
-        <div class="edu">
-          <div>
+        <div class="edu-grid">
+          <article class="edu-card main">
             <h3>Bachelor of Information Technology (Hons.), Multimedia Technology</h3>
             <p class="meta">Universiti Malaysia Sabah, 2021 to 2025</p>
             <ul>
               <li>Worked with Institut Latihan Perindustrian (ILP) Labuan and the Immigration Department on academic projects.</li>
               <li>Built projects in software development, IoT and AR/VR.</li>
             </ul>
-          </div>
-          <div>
+          </article>
+          <article class="edu-card">
             <h3>Sijil Tinggi Pelajaran Malaysia (STPM)</h3>
             <p class="meta">SMK Kuala Kubu Bharu, 2019 to 2021</p>
             <ul><li>Graduated with Distinction.</li></ul>
-          </div>
-          <div>
+          </article>
+          <article class="edu-card">
             <h3>Sijil Pelajaran Malaysia (SPM)</h3>
             <p class="meta">SMK Cheras Jaya, 2014 to 2018</p>
             <ul><li>Social Science stream, with Business, Arts and Geography.</li></ul>
-          </div>
+          </article>
         </div>
 
         <h3 class="sub">Achievements and certifications</h3>
-        <ul class="plain" style="max-width:70ch">
+        <ul class="plain">
           <li>Dean's Award, 2023/2024 academic year</li>
           <li>STPM Distinction Award</li>
           <li>Introduction to Cybersecurity, Cisco Networking Academy</li>
@@ -314,20 +389,20 @@
         </ul>
       </div>
     </section>
-
-    <section class="block" id="contact">
-      <h2>Contact</h2>
-      <div>
-        <p class="prose" style="margin-top:0">I am open to software developer roles. Email is the fastest way to reach me.</p>
-        <a class="big-mail" href="mailto:nuruljannah3019@gmail.com">nuruljannah3019@gmail.com</a>
-        <ul class="contact-list">
-          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/jannahbashir1905" rel="noopener">linkedin.com/in/jannahbashir1905</a></li>
-          <li><span>GitHub</span><a href="https://github.com/nanashir1105" rel="noopener">github.com/nanashir1105</a></li>
-          <li><span>Location</span>Petaling Jaya, Selangor, Malaysia</li>
-        </ul>
-      </div>
-    </section>
   </div>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>I am open to software developer roles. Email is the fastest way to reach me.</p>
+      <a class="big-mail" href="mailto:nuruljannah3019@gmail.com">nuruljannah3019@gmail.com</a>
+      <ul class="contact-list">
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/jannahbashir1905" rel="noopener">linkedin.com/in/jannahbashir1905</a></li>
+        <li><span>GitHub</span><a href="https://github.com/nanashir1105" rel="noopener">github.com/nanashir1105</a></li>
+        <li><span>Location</span>Petaling Jaya, Selangor, Malaysia</li>
+      </ul>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -350,27 +425,36 @@
     { n: "Java",       c: "lang",  d: "language" },
     { n: "C++",        c: "lang",  d: "language" }
   ];
-  var COLORS = { lang: "var(--cobalt)", frame: "var(--yellow)", data: "var(--teal)", tool: "var(--ink)" };
-  var CHIP_W = 112, GAP = 14, STEP = CHIP_W + GAP, SPEED = 55; // px per second
+  var COLORS = { lang: "#FFFFFF", frame: "#FFC93C", data: "#4FD8C0", tool: "#8A96C6" };
+  var GAP = 16, SPEED = 60, COPIES = 3; // px per second
 
   var track = document.getElementById("track");
   var viewport = document.getElementById("viewport");
+  var band = document.getElementById("band");
+  var belt = document.getElementById("belt");
   var swatch = document.getElementById("swatch");
   var rName = document.getElementById("rName");
   var rNote = document.getElementById("rNote");
   var btn = document.getElementById("beltBtn");
 
-  // Two copies of the list so the belt can loop without a gap.
+  // Three copies of the list so the belt loops without a gap, even on wide screens.
   var html = "";
-  for (var k = 0; k < 2; k++) {
+  for (var k = 0; k < COPIES; k++) {
     ITEMS.forEach(function (it) {
       html += '<div class="chip ' + it.c + '">' + it.n + "</div>";
     });
   }
   track.innerHTML = html;
+  var chips = track.children;
 
-  var setWidth = ITEMS.length * STEP;
-  var x = 0, last = null, paused = false, hovering = false, raf = null, shown = -1;
+  var CHIP_W = chips[0].offsetWidth, STEP = CHIP_W + GAP, setWidth = ITEMS.length * STEP;
+  function measure() {
+    CHIP_W = chips[0].offsetWidth;
+    STEP = CHIP_W + GAP;
+    setWidth = ITEMS.length * STEP;
+  }
+
+  var x = 0, last = null, paused = false, hovering = false, shown = -1;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function read() {
@@ -383,11 +467,15 @@
       rName.textContent = it.n;
       rNote.textContent = it.d;
       swatch.style.background = COLORS[it.c];
+      for (var j = 0; j < chips.length; j++) {
+        chips[j].classList.toggle("active", j % ITEMS.length === idx);
+      }
     }
   }
 
   function draw() {
     track.style.transform = "translateX(" + (-x) + "px)";
+    band.style.backgroundPositionX = (-x) + "px";
     read();
   }
 
@@ -399,23 +487,24 @@
       x = (x + SPEED * dt) % setWidth;
       draw();
     }
-    raf = requestAnimationFrame(frame);
+    requestAnimationFrame(frame);
   }
+
+  window.addEventListener("resize", function () { measure(); shown = -1; draw(); });
 
   if (reduce) {
     btn.hidden = true;
     draw();
-    window.addEventListener("resize", draw);
   } else {
     draw();
-    raf = requestAnimationFrame(frame);
+    requestAnimationFrame(frame);
     btn.addEventListener("click", function () {
       paused = !paused;
       btn.setAttribute("aria-pressed", String(paused));
       btn.textContent = paused ? "Resume belt" : "Pause belt";
     });
-    viewport.addEventListener("mouseenter", function () { hovering = true; });
-    viewport.addEventListener("mouseleave", function () { hovering = false; last = null; });
+    belt.addEventListener("mouseenter", function () { hovering = true; });
+    belt.addEventListener("mouseleave", function () { hovering = false; last = null; });
   }
 })();
 </script>
