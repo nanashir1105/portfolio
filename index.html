@@ -45,7 +45,7 @@
   .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: #fff; padding: .5rem .9rem; border-radius: 6px; z-index: 20; }
   .skip:focus { left: 8px; }
   .wrap { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
-
+ 
   /* Code-window component, reused across the page */
   .win { background: #0E1633; border: 1px solid rgba(255,255,255,.14); border-radius: 14px; box-shadow: 0 24px 48px -16px rgba(5,10,35,.55); overflow: hidden; color: #E4E9FF; font-family: var(--mono); }
   .win-bar { display: flex; align-items: center; gap: 6px; padding: .6rem .85rem; background: #17214A; font-size: .78rem; color: #9FAAD6; }
@@ -57,7 +57,7 @@
   .win pre { margin: 0; padding: 1rem 1.1rem; font-size: .86rem; line-height: 1.65; overflow-x: auto; }
   .win code { font-family: inherit; }
   .k { color: #FF7A9C; } .s { color: #FFD76E; } .v { color: #7FE7D4; } .f { color: #8FA8FF; } .c { color: #7584B5; }
-
+ 
   /* ---------- Hero ---------- */
   .hero { color: #fff; overflow: hidden; background-color: var(--night); background-image: var(--circuit), linear-gradient(135deg, #0B1230 0%, #14246B 58%, #2B4EFF 135%); background-size: 240px 240px, cover; }
   .hero :focus-visible, .readout-strip :focus-visible, .contact :focus-visible, .band :focus-visible { outline-color: var(--yellow); }
@@ -76,21 +76,21 @@
   .btn.primary:hover { background: #fff; border-color: #fff; color: var(--ink); }
   .btn.ghost { background: transparent; color: #fff; }
   .btn.ghost:hover { background: #fff; color: var(--night); }
-
+ 
   /* Portrait */
   .hero-art { position: relative; justify-self: center; width: min(360px, 100%); margin-bottom: 2.5rem; }
   .portrait { position: relative; }
   .frame-back { position: absolute; inset: 0; transform: translate(14px, 14px); border: 3px solid var(--yellow); border-radius: 28px 28px 28px 110px; }
-  .frame { position: relative; aspect-ratio: 4 / 5; border-radius: 28px 28px 28px 110px; overflow: hidden; background: linear-gradient(160deg, #2B4EFF 0%, #4FD8C0 170%); display: grid; place-items: center; }
-  .frame .initials { font-family: var(--display); font-weight: 800; font-size: 6.5rem; letter-spacing: -.05em; color: rgba(255,255,255,.92); }
-  .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .frame { position: relative; aspect-ratio: 4 / 5; border-radius: 28px 28px 28px 110px; overflow: hidden; background: #fff; display: grid; place-items: center; }
+  .frame .initials { font-family: var(--display); font-weight: 800; font-size: 6.5rem; letter-spacing: -.05em; color: var(--cobalt); }
+  .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; background: #fff; }
   .float { position: absolute; font-family: var(--display); font-weight: 700; font-size: .92rem; padding: .35rem .85rem; border-radius: 999px; box-shadow: 0 10px 22px rgba(5,10,35,.35); color: var(--ink); }
   .float.f1 { top: 30px; left: -34px; background: var(--yellow); }
   .float.f2 { top: 48%; right: -26px; background: #fff; }
   .float.f3 { top: -12px; right: 24px; background: var(--mint); }
   .win.mini { position: absolute; left: -64px; bottom: -42px; width: 270px; }
   .win.mini pre { font-size: .76rem; padding: .75rem .9rem; line-height: 1.55; }
-
+ 
   /* Conveyor belt */
   .belt-viewport { position: relative; height: 124px; overflow: hidden; }
   .belt-track { position: absolute; left: 0; top: 30px; display: flex; gap: 16px; will-change: transform; }
@@ -115,7 +115,7 @@
   .swatch { width: 16px; height: 16px; border-radius: 5px; background: #fff; flex: none; }
   .belt-ctl { font: inherit; font-weight: 700; font-size: .95rem; color: #fff; background: transparent; border: 2px solid #fff; border-radius: 8px; padding: .3rem .9rem; cursor: pointer; }
   .belt-ctl:hover { background: #fff; color: var(--ink); }
-
+ 
   /* ---------- Sections ---------- */
   .block { display: grid; grid-template-columns: 210px 1fr; gap: 1.25rem 3rem; padding: 5rem 0; border-top: 1px solid var(--rule); }
   .wrap > .block:first-child { border-top: 0; }
@@ -125,7 +125,7 @@
   .prose p:last-child { margin-bottom: 0; }
   .lead { font-size: 1.35rem; line-height: 1.5; }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
-
+ 
   /* Experience as a git history */
   .commit { display: grid; grid-template-columns: 44px 1fr; column-gap: 1rem; position: relative; padding-bottom: 2.6rem; }
   .commit::before { content: ""; position: absolute; left: 20px; top: 24px; bottom: -6px; width: 3px; background: var(--cobalt); }
@@ -140,7 +140,7 @@
   ul.plain { margin: 0; padding-left: 1.2rem; max-width: 62ch; }
   ul.plain li { margin-bottom: .5rem; padding-left: .2rem; }
   ul.plain li::marker { color: var(--cobalt); }
-
+ 
   /* Projects */
   .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; }
@@ -160,7 +160,7 @@
   .s-line { fill: none; stroke: var(--ink); stroke-width: 2; }
   .t-head { fill: #fff; font: 600 11px var(--mono); }
   .t-row { fill: var(--ink); font: 400 10.5px var(--mono); }
-
+ 
   /* Skills band */
   .band { background-color: var(--night); background-image: radial-gradient(rgba(255,255,255,.13) 1.2px, transparent 1.4px), linear-gradient(135deg, #0B1230, #14246B); background-size: 26px 26px, cover; color: #fff; }
   .band .block { border-top: 0; }
@@ -175,7 +175,7 @@
   .pill.data { background: var(--mint); border-color: var(--mint); color: var(--ink); }
   .pill.tool { background: var(--tool); border-color: var(--tool); color: #fff; }
   .pill.plain { border-color: rgba(255,255,255,.35); color: #fff; }
-
+ 
   /* Education */
   .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
   .edu-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; padding: 1.5rem; }
@@ -185,7 +185,7 @@
   .edu-card .meta { margin: .2rem 0 .7rem; color: var(--ink-soft); }
   .edu-card ul { margin: 0; padding-left: 1.2rem; }
   .sub { font-family: var(--display); font-weight: 800; font-size: 1.3rem; letter-spacing: -.01em; margin: 3rem 0 .9rem; }
-
+ 
   /* Contact */
   .contact { color: #fff; padding: 5.5rem 0; overflow: hidden; background-color: var(--cobalt); background-image: var(--circuit), linear-gradient(135deg, #14246B 0%, #2B4EFF 100%); background-size: 240px 240px, cover; }
   .contact h2 { font-family: var(--display); font-weight: 800; font-size: 2rem; letter-spacing: -.025em; line-height: 1.05; margin: 0 0 1rem; }
@@ -196,9 +196,9 @@
   .prompt { font-family: var(--mono); font-weight: 600; color: var(--mint); font-size: .5em; margin-right: .5em; letter-spacing: 0; vertical-align: .15em; }
   .contact-list { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: .5rem; font-family: var(--display); font-weight: 500; }
   .contact-list span { display: inline-block; min-width: 6.5rem; font-weight: 700; color: var(--mint); }
-
+ 
   footer { background: var(--deep); color: #AEB8E0; padding: 1.6rem 0; font-size: .95rem; }
-
+ 
   @media (max-width: 1000px) {
     .about-grid { grid-template-columns: 1fr; }
   }
