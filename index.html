@@ -509,89 +509,111 @@
         </article>
         <!-- End DevTrack Project -->
 
-        <!-- Budget Buddy -->
-<article class="panel project-card">
+<!-- Budget Buddy Project -->
+<article class="panel">
   <div class="art dark">
-    <svg
-      viewBox="0 0 600 300"
-      role="img"
-      aria-label="Budget Buddy finance dashboard illustration"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect width="600" height="300" rx="16" fill="#101c2c"/>
-      <rect x="35" y="30" width="530" height="240" rx="14"
-            fill="#18283a" stroke="#34475c"/>
+    <svg viewBox="0 0 400 160"
+         role="img"
+         aria-label="Budget Buddy personal finance dashboard illustration"
+         xmlns="http://www.w3.org/2000/svg">
 
-      <text x="60" y="65" fill="#ffffff" font-size="21"
-            font-weight="700">Budget Buddy</text>
-      <text x="60" y="87" fill="#aab9c9" font-size="12">
-        Your monthly money overview
-      </text>
+      <!-- Dashboard window -->
+      <rect x="20" y="10" width="360" height="140"
+            rx="8" fill="#FFFFFF" stroke="#101B3A" stroke-width="2"/>
 
-      <rect x="55" y="108" width="150" height="75" rx="10"
-            fill="#22394b"/>
-      <text x="70" y="132" fill="#aab9c9" font-size="12">Income</text>
-      <text x="70" y="159" fill="#6ee7b7" font-size="23"
-            font-weight="700">$3,200</text>
+      <!-- Header -->
+      <path d="M28 10h344a8 8 0 0 1 8 8v22H20V18a8 8 0 0 1 8-8z"
+            fill="#101B3A"/>
+      <text x="36" y="29" fill="#FFFFFF"
+            font-family="Arial, sans-serif"
+            font-size="12" font-weight="700">Budget Buddy</text>
 
-      <rect x="225" y="108" width="150" height="75" rx="10"
-            fill="#22394b"/>
-      <text x="240" y="132" fill="#aab9c9" font-size="12">Expenses</text>
-      <text x="240" y="159" fill="#fb923c" font-size="23"
-            font-weight="700">$1,450</text>
+      <circle cx="345" cy="25" r="4" fill="#4FD8C0"/>
+      <circle cx="359" cy="25" r="4" fill="#FFC93C"/>
+      <circle cx="373" cy="25" r="4" fill="#FF4D6D"/>
 
-      <rect x="395" y="108" width="150" height="75" rx="10"
-            fill="#22394b"/>
-      <text x="410" y="132" fill="#aab9c9" font-size="12">Balance</text>
-      <text x="410" y="159" fill="#6ee7b7" font-size="23"
-            font-weight="700">$1,750</text>
+      <!-- Summary cards -->
+      <rect x="32" y="50" width="102" height="43"
+            rx="5" fill="#D4F5EE"/>
+      <rect x="149" y="50" width="102" height="43"
+            rx="5" fill="#DCE3FF"/>
+      <rect x="266" y="50" width="102" height="43"
+            rx="5" fill="#FFF1C9"/>
 
-      <text x="60" y="215" fill="#ffffff" font-size="13"
-            font-weight="600">Monthly spending</text>
-      <rect x="60" y="229" width="480" height="10" rx="5"
-            fill="#34475c"/>
-      <rect x="60" y="229" width="230" height="10" rx="5"
-            fill="#38bdf8"/>
-      <text x="60" y="257" fill="#aab9c9" font-size="11">
-        Track spending. Build better habits.
-      </text>
+      <text x="42" y="64" fill="#4A5472"
+            font-family="Arial, sans-serif" font-size="8">Income</text>
+      <text x="42" y="83" fill="#101B3A"
+            font-family="Arial, sans-serif"
+            font-size="15" font-weight="700">RM 3,200</text>
+
+      <text x="159" y="64" fill="#4A5472"
+            font-family="Arial, sans-serif" font-size="8">Expenses</text>
+      <text x="159" y="83" fill="#101B3A"
+            font-family="Arial, sans-serif"
+            font-size="15" font-weight="700">RM 1,450</text>
+
+      <text x="276" y="64" fill="#4A5472"
+            font-family="Arial, sans-serif" font-size="8">Balance</text>
+      <text x="276" y="83" fill="#101B3A"
+            font-family="Arial, sans-serif"
+            font-size="15" font-weight="700">RM 1,750</text>
+
+      <!-- Spending overview -->
+      <text x="32" y="109" fill="#101B3A"
+            font-family="Arial, sans-serif"
+            font-size="9" font-weight="700">Monthly spending</text>
+
+      <rect x="32" y="116" width="205" height="7"
+            rx="3.5" fill="#D3D9E4"/>
+      <rect x="32" y="116" width="123" height="7"
+            rx="3.5" fill="#2B4EFF"/>
+
+      <text x="32" y="138" fill="#4A5472"
+            font-family="Arial, sans-serif"
+            font-size="8">Track expenses and manage your budget</text>
+
+      <!-- Decorative chart -->
+      <path d="M275 132 L293 119 L310 126 L329 105 L351 113"
+            fill="none" stroke="#2B4EFF"
+            stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round"/>
+      <circle cx="329" cy="105" r="3" fill="#4FD8C0"/>
     </svg>
   </div>
 
-  <div class="project-content">
+  <div class="body">
     <h3>Budget Buddy — Personal Finance Tracker</h3>
 
-    <p class="project-meta">
+    <p class="meta">
       Web Application Development · Personal Project
     </p>
 
     <p>
-      A personal budgeting web app that helps users manage income and
-      expenses, monitor their monthly balance, set spending limits, and
-      understand their spending habits through financial insights.
-      Includes transaction search and CSV export, with data kept in
-      the user's browser.
+      A personal finance web application that helps users manage
+      their income and expenses, monitor their available balance,
+      and keep track of spending. The project focuses on making
+      everyday budgeting easier through a clear financial dashboard.
     </p>
 
-    <div class="tags">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>Personal Finance</span>
-      <span>Data Visualization</span>
-      <span>CSV Export</span>
-    </div>
+    <ul class="tags" aria-label="Technologies and features">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Personal Finance</li>
+      <li>Budget Tracking</li>
+    </ul>
 
-    <a
-      href="https://nanashir1105.github.io/Budget-Buddy/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="project-link"
-    >
-      View Live Project ↗
-    </a>
+    <p class="links">
+      <a href="https://nanashir1105.github.io/Budget-Buddy/"
+         target="_blank"
+         rel="noopener noreferrer">
+        View Budget Buddy project ↗
+      </a>
+    </p>
   </div>
 </article>
+<!-- End Budget Buddy Project -->
+
 
         <article class="panel">
           <div class="art erd">
